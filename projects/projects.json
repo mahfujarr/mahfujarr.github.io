@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Personal Finance Tracker",
+    "desc": "Personal Finance Tracker Website made with PHP & MySQL. I have made it for my DBMS Course's project.",
+    "image": "xpense",
+    "category": "php",
+    "links": {
+      "view": "https://xpense.free.nf",
+      "code": "https://github.com/mahfujarr/Xpense"
+    }
+  },
+  {
+    "name": "Library Management System",
+    "desc": "I have been tasked to build a library management system for my C++ course. It is a console-based application that allows users to manage a library's book inventory.",
+    "image": "lms",
+    "category": "cpp",
+    "links": {
+      "view": "",
+      "code": "https://github.com/mahfujarr/LMS"
+    }
+  },
+  {
+    "name": "ADB Loop",
+    "desc": "Runs an ADB (Android Debug Bridge) command in loop for all the packages in the .txt file.",
+    "image": "adbloop",
+    "category": "python",
+    "links": {
+      "view": "",
+      "code": "https://github.com/mahfujarr/ADBloop"
+    }
+  },
+  {
+    "name": "Finance Tracker",
+    "desc": "A Finance tracker application in C++ that logs the finance in a simple .txt file in terminal.",
+    "image": "pft",
+    "category": "cpp",
+    "links": {
+      "view": "",
+      "code": "https://github.com/mahfujarr/FinanceTrackerInCpp"
+    }
+  }
+]
