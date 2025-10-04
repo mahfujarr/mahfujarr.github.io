@@ -1,7 +1,7 @@
 [
   {
     "name": "Personal Finance Tracker",
-    "desc": "Personal Finance Tracker Website made with PHP & MySQL. I have made it for my DBMS Course's project.",
+    "desc": "Personal Finance Tracker Website with individual dashboard made with raw PHP & MySQL. I have made it for my DBMS Course's project.",
     "image": "xpense",
     "category": "website",
     "links": {
