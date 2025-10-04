@@ -3,7 +3,7 @@
     "name": "Personal Finance Tracker",
     "desc": "Personal Finance Tracker Website made with PHP & MySQL. I have made it for my DBMS Course's project.",
     "image": "xpense",
-    "category": "php",
+    "category": "website",
     "links": {
       "view": "https://xpense.free.nf",
       "code": "https://github.com/mahfujarr/Xpense"
@@ -13,7 +13,7 @@
     "name": "Library Management System",
     "desc": "A library management system for my C++ course. It is a console-based application & has no GUI",
     "image": "lms",
-    "category": "cpp",
+    "category": "console",
     "links": {
       "view": "",
       "code": "https://github.com/mahfujarr/LMS"
@@ -23,7 +23,7 @@
     "name": "ADB Loop",
     "desc": "Runs an ADB (Android Debug Bridge) command in loop for all the packages in the .txt file.",
     "image": "adbloop",
-    "category": "python",
+    "category": "script",
     "links": {
       "view": "",
       "code": "https://github.com/mahfujarr/ADBloop"
@@ -33,7 +33,7 @@
     "name": "Finance Tracker",
     "desc": "A Finance tracker application in C++ that logs the finance in a simple .txt file in terminal.",
     "image": "pft",
-    "category": "cpp",
+    "category": "console",
     "links": {
       "view": "",
       "code": "https://github.com/mahfujarr/FinanceTrackerInCpp"
@@ -43,10 +43,20 @@
     "name": "ESP 32 Switch",
     "desc": "A simple IoT project that uses an ESP32 microcontroller to control a switch via a web interface.",
     "image": "esp32Switch",
-    "category": "cpp",
+    "category": "iot",
     "links": {
       "view": "",
       "code": "https://github.com/mahfujarr/ESP32-Switch"
+    }
+  },
+  {
+    "name": "Portfolio Website in DJango",
+    "desc": "A portfolio website for myself in Django. I've learned a lot of django backend things building this.",
+    "image": "portfolioDjango",
+    "category": "website",
+    "links": {
+      "view": "https://mahfujarr.pythonanywhere.com/",
+      "code": "https://github.com/mahfujarr/MyWebsite"
     }
   }
 ]
