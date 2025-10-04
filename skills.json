@@ -1,102 +1,29 @@
 [
-  {
-    "name": "HTML5",
-    "icon": "https://img.icons8.com/color/48/000000/html-5--v1.png"
-  },
-  { "name": "CSS3", "icon": "https://img.icons8.com/color/48/000000/css3.png" },
-  {
-    "name": "JavaScript",
-    "icon": "https://img.icons8.com/color/48/000000/javascript--v1.png"
-  },
-  {
-    "name": "Bootstrap",
-    "icon": "https://img.icons8.com/color/48/000000/bootstrap.png"
-  },
-  {
-    "name": "Tailwind CSS",
-    "icon": "https://img.icons8.com/color/48/000000/tailwindcss.png"
-  },
-  {
-    "name": "Python",
-    "icon": "https://img.icons8.com/color/48/000000/python--v1.png"
-  },
-  {
-    "name": "Django",
-    "icon": "https://img.icons8.com/color/48/000000/django.png"
-  },
-  { "name": "PyQt5", "icon": "https://img.icons8.com/fluency/48/qt.png" },
-  {
-    "name": "PHP",
-    "icon": "https://img.icons8.com/offices/48/000000/php-logo.png"
-  },
-  {
-    "name": "Kotlin",
-    "icon": "https://img.icons8.com/color/48/000000/kotlin.png"
-  },
-  {
-    "name": "C++",
-    "icon": "https://img.icons8.com/color/48/000000/c-plus-plus-logo.png"
-  },
-  {
-    "name": "MySQL",
-    "icon": "https://img.icons8.com/color/48/000000/mysql-logo.png"
-  },
-  {
-    "name": "SQLite",
-    "icon": "https://img.icons8.com/color/48/000000/sqlite.png"
-  },
-  {
-    "name": "PostgreSQL",
-    "icon": "https://img.icons8.com/color/48/000000/postgreesql.png"
-  },
-  { "name": "Git", "icon": "https://img.icons8.com/color/48/000000/git.png" },
-  {
-    "name": "GitHub",
-    "icon": "https://img.icons8.com/glyph-neue/48/ffffff/github.png"
-  },
-  {
-    "name": "Linux",
-    "icon": "https://img.icons8.com/color/48/000000/linux--v1.png"
-  },
-  {
-    "name": "VS Code",
-    "icon": "https://img.icons8.com/color/48/000000/visual-studio-code-2019.png"
-  },
-  {
-    "name": "REST API",
-    "icon": "https://img.icons8.com/external-smashingstocks-flat-smashing-stocks/48/external-api-web-hosting-smashingstocks-flat-smashing-stocks.png"
-  },
-  { "name": "JSON", "icon": "https://img.icons8.com/fluency/48/json.png" },
-  {
-    "name": "Regex",
-    "icon": "https://img.icons8.com/ios-filled/48/regular-expression.png"
-  },
-  {
-    "name": "Command Line",
-    "icon": "https://img.icons8.com/fluency/48/console.png"
-  },
+  { "name": "HTML5", "icon": "assets/images/skills/HTML5.png" },
+  { "name": "CSS3", "icon": "assets/images/skills/CSS3.png" },
+  { "name": "JavaScript", "icon": "assets/images/skills/JavaScript.png" },
+  { "name": "Bootstrap", "icon": "assets/images/skills/Bootstrap.png" },
+  { "name": "Tailwind CSS", "icon": "assets/images/skills/Tailwind_CSS.png" },
+  { "name": "Python", "icon": "assets/images/skills/Python.png" },
+  { "name": "Django", "icon": "assets/images/skills/Django.png" },
+  { "name": "PHP", "icon": "assets/images/skills/PHP.png" },
+  { "name": "Kotlin", "icon": "assets/images/skills/Kotlin.png" },
+  { "name": "C++", "icon": "assets/images/skills/C++.png" },
+  { "name": "MySQL", "icon": "assets/images/skills/MySQL.png" },
+  { "name": "SQLite", "icon": "assets/images/skills/SQLite.png" },
+  { "name": "PostgreSQL", "icon": "assets/images/skills/PostgreSQL.png" },
+  { "name": "Git", "icon": "assets/images/skills/Git.png" },
+  { "name": "GitHub", "icon": "assets/images/skills/GitHub.png" },
+  { "name": "Linux", "icon": "assets/images/skills/Linux.png" },
+  { "name": "VS Code", "icon": "assets/images/skills/VS_Code.png" },
+  { "name": "REST API", "icon": "assets/images/skills/restapi.png" },
+  { "name": "JSON", "icon": "assets/images/skills/JSON.png" },
+  { "name": "Command Line", "icon": "assets/images/skills/Command_Line.png" },
   {
     "name": "API Integration",
-    "icon": "https://img.icons8.com/fluency/48/api.png"
+    "icon": "assets/images/skills/API_Integration.png"
   },
-  {
-    "name": "Web Scraping",
-    "icon": "https://img.icons8.com/external-flatart-icons-flat-flatarticons/48/external-scraping-data-science-flatart-icons-flat-flatarticons.png"
-  },
-  {
-    "name": "FFmpeg",
-    "icon": "https://img.icons8.com/color/48/000000/ffmpeg.png"
-  },
-  {
-    "name": "yt-dlp",
-    "icon": "https://img.icons8.com/external-flatart-icons-outline-flatarticons/48/external-download-cloud-computing-flatart-icons-outline-flatarticons.png"
-  },
-  {
-    "name": "Docker",
-    "icon": "https://img.icons8.com/color/48/000000/docker.png"
-  },
-  {
-    "name": "Nginx",
-    "icon": "https://img.icons8.com/color/48/000000/nginx.png"
-  }
+  { "name": "yt-dlp", "icon": "assets/images/skills/ytdlp.png" },
+  { "name": "Docker", "icon": "assets/images/skills/Docker.png" },
+  { "name": "Nginx", "icon": "assets/images/skills/Nginx.png" }
 ]
