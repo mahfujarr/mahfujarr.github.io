@@ -11,7 +11,7 @@
   },
   {
     "name": "Library Management System",
-    "desc": "I have been tasked to build a library management system for my C++ course. It is a console-based application that allows users to manage a library's book inventory.",
+    "desc": "A library management system for my C++ course. It is a console-based application & has no GUI",
     "image": "lms",
     "category": "cpp",
     "links": {
@@ -37,6 +37,16 @@
     "links": {
       "view": "",
       "code": "https://github.com/mahfujarr/FinanceTrackerInCpp"
+    }
+  },
+  {
+    "name": "ESP 32 Switch",
+    "desc": "A simple IoT project that uses an ESP32 microcontroller to control a switch via a web interface.",
+    "image": "esp32Switch",
+    "category": "cpp",
+    "links": {
+      "view": "",
+      "code": "https://github.com/mahfujarr/ESP32-Switch"
     }
   }
 ]

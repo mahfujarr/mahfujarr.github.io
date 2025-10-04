@@ -127,22 +127,26 @@ function showProjects(projects) {
     .slice(0, 10)
     .filter((project) => project.category != "android")
     .forEach((project) => {
+      const viewLink = project.links.view && project.links.view.trim() !== ""
+        ? `<a href="${project.links.view}" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a>`
+        : `<a class="btn disabled" style="pointer-events:none;opacity:0.6;"><i class="fas fa-eye"></i> View</a>`;
+
       projectHTML += `
         <div class="box tilt">
-      <img draggable="false" src="/assets/images/projects/${project.image}.png" alt="project" />
-      <div class="content">
-        <div class="tag">
-        <h3>${project.name}</h3>
-        </div>
-        <div class="desc">
-          <p>${project.desc}</p>
-          <div class="btns">
-            <a href="${project.links.view}" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a>
-            <a href="${project.links.code}" class="btn" target="_blank">Code <i class="fas fa-code"></i></a>
+          <img draggable="false" src="/assets/images/projects/${project.image}.png" alt="project" />
+          <div class="content">
+            <div class="tag">
+              <h3>${project.name}</h3>
+            </div>
+            <div class="desc">
+              <p>${project.desc}</p>
+              <div class="btns">
+                ${viewLink}
+                <a href="${project.links.code}" class="btn" target="_blank">Code <i class="fas fa-code"></i></a>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-    </div>`;
+        </div>`;
     });
   projectsContainer.innerHTML = projectHTML;
 
