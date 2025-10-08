@@ -15,6 +15,7 @@ html {
   font-size: 62.5%;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  scroll-padding-top: 6.5rem;
 }
 body {
   background: #f7f7f7;
@@ -366,7 +367,7 @@ header .navbar ul li a:hover {
   border-radius: 5%;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.6);
   mix-blend-mode: luminosity;
-  transition: 0.3s;
+  transition: all 0.3s ease;
   cursor: pointer;
 }
 .about .row .image img:hover {
@@ -935,12 +936,15 @@ header .navbar ul li a:hover {
   background: #e5ecfb;
   min-height: 60vh;
 }
+.contact * {
+  text-transform: none !important;
+}
 .contact .container {
   max-width: 1050px;
   width: 100%;
   background: #fff;
   border-radius: 1.5rem;
-  margin: 2rem 5rem;
+  margin: 2rem auto;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
 }
 .contact .container .content {

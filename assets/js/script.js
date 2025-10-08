@@ -1,5 +1,33 @@
+const srtop = ScrollReveal({
+  origin: "top",
+  distance: "80px",
+  duration: 1000,
+  reset: true,
+});
+const toast = document.getElementById("toast");
+
+const profilePhotos = [
+  "assets/images/profile.webp",
+  "assets/images/profile2.webp", // Add your second photo
+  "assets/images/profile3.webp", // Add your third photo
+  "assets/images/profile4.webp", // Add your fourth photo
+];
+let currentPhotoIndex = 0;
+
+// Profile image cycling function
+function cycleProfilePhoto() {
+  const profileImg = document.querySelector(".about .image img");
+  if (profileImg && profilePhotos.length > 1) {
+    currentPhotoIndex = (currentPhotoIndex + 1) % profilePhotos.length;
+    profileImg.style.opacity = "0";
+    setTimeout(() => {
+      profileImg.src = profilePhotos[currentPhotoIndex];
+      profileImg.style.opacity = "1";
+    }, 150);
+  }
+}
+
 function showToast(message, type) {
-  const toast = document.getElementById("toast");
   toast.innerText = message;
   toast.className = type + " show";
   setTimeout(() => {
@@ -10,6 +38,12 @@ $(document).ready(function () {
   $("#menu").click(function () {
     $(this).toggleClass("fa-times");
     $(".navbar").toggleClass("nav-toggle");
+  });
+
+  // Profile image cycling on click
+  $(".about .image img").click(function () {
+    showToast("Since you've clicked here, here's another photo of me ^_^", "success");
+    cycleProfilePhoto();
   });
 
   $(window).on("scroll load", function () {
@@ -41,7 +75,7 @@ $(document).ready(function () {
     e.preventDefault();
     $("html, body").animate(
       {
-        scrollTop: $($(this).attr("href")).offset().top,
+        scrollTop: $($(this).attr("href")).offset().top - 65,
       },
       500,
       "linear"
@@ -118,6 +152,7 @@ function showSkills(skills) {
             </div>`;
   });
   skillsContainer.innerHTML = skillHTML;
+  srtop.reveal(".skills .container .bar", { interval: 50 });
 }
 
 function showProjects(projects) {
@@ -127,22 +162,31 @@ function showProjects(projects) {
     .slice(0, 10)
     .filter((project) => project.category != "android")
     .forEach((project) => {
-      const viewLink = project.links.view && project.links.view.trim() !== ""
-        ? `<a href="${project.links.view}" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a>`
-        : `<a class="btn disabled" style="pointer-events:none;opacity:0.6;"><i class="fas fa-eye"></i> View</a>`;
+      const viewLink =
+        project.links.view && project.links.view.trim() !== ""
+          ? `<a href="${project.links.view}" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a>`
+          : `<a class="btn disabled" style="pointer-events:none;opacity:0.6;"><i class="fas fa-eye"></i> View</a>`;
 
       projectHTML += `
         <div class="box tilt">
-          <img draggable="false" src="/assets/images/projects/${project.image}.png" alt="project" />
+          <img draggable="false" src="/assets/images/projects/${
+            project.image
+          }.png" alt="project" />
           <div class="content">
             <div class="tag">
               <h3>${project.name}</h3>
             </div>
             <div class="desc">
-              <p>${project.desc}</p>
+              <p>${
+                project.desc.length > 100
+                  ? project.desc.substring(0, 100) + "..."
+                  : project.desc
+              }</p>
               <div class="btns">
                 ${viewLink}
-                <a href="${project.links.code}" class="btn" target="_blank">Code <i class="fas fa-code"></i></a>
+                <a href="${
+                  project.links.code
+                }" class="btn" target="_blank">Code <i class="fas fa-code"></i></a>
               </div>
             </div>
           </div>
@@ -157,13 +201,6 @@ function showProjects(projects) {
   // <!-- tilt js effect ends -->
 
   /* ===== SCROLL REVEAL ANIMATION ===== */
-  const srtop = ScrollReveal({
-    origin: "top",
-    distance: "80px",
-    duration: 1000,
-    reset: true,
-  });
-
   /* SCROLL PROJECTS */
   srtop.reveal(".work .box", { interval: 200 });
 }
@@ -182,31 +219,21 @@ VanillaTilt.init(document.querySelectorAll(".tilt"), {
 });
 // <!-- tilt js effect ends -->
 
-// pre loader start
-// function loader() {
-//     document.querySelector('.loader-container').classList.add('fade-out');
-// }
-// function fadeOut() {
-//     setInterval(loader, 500);
-// }
-// window.onload = fadeOut;
-// pre loader end
-
 // disable developer mode
 document.onkeydown = function (e) {
-  if (e.keyCode == 123) {
+  if (e.key === "F12") {
     return false;
   }
-  if (e.ctrlKey && e.shiftKey && e.keyCode == "I".charCodeAt(0)) {
+  if (e.ctrlKey && e.shiftKey && e.key === "I") {
     return false;
   }
-  if (e.ctrlKey && e.shiftKey && e.keyCode == "C".charCodeAt(0)) {
+  if (e.ctrlKey && e.shiftKey && e.key === "C") {
     return false;
   }
-  if (e.ctrlKey && e.shiftKey && e.keyCode == "J".charCodeAt(0)) {
+  if (e.ctrlKey && e.shiftKey && e.key === "J") {
     return false;
   }
-  if (e.ctrlKey && e.keyCode == "U".charCodeAt(0)) {
+  if (e.ctrlKey && e.key === "u") {
     return false;
   }
 };
@@ -226,12 +253,6 @@ var Tawk_API = Tawk_API || {},
 //End of Tawk.to Script
 
 /* ===== SCROLL REVEAL ANIMATION ===== */
-const srtop = ScrollReveal({
-  origin: "top",
-  distance: "80px",
-  duration: 1000,
-  reset: true,
-});
 
 /* SCROLL HOME */
 srtop.reveal(".home .content h3", { delay: 200 });
@@ -252,10 +273,6 @@ srtop.reveal(".about .content .tag", { delay: 200 });
 srtop.reveal(".about .content p", { delay: 200 });
 srtop.reveal(".about .content .box-container", { delay: 200 });
 srtop.reveal(".about .content .resumebtn", { delay: 200 });
-
-/* SCROLL SKILLS */
-srtop.reveal(".skills .container", { interval: 200 });
-srtop.reveal(".skills .container .bar", { delay: 400 });
 
 /* SCROLL EDUCATION */
 srtop.reveal(".education .box", { interval: 200 });
