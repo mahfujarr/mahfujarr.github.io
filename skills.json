@@ -1,29 +1,98 @@
 [
-  { "name": "HTML5", "icon": "assets/images/skills/HTML5.png" },
-  { "name": "CSS3", "icon": "assets/images/skills/CSS3.png" },
-  { "name": "JavaScript", "icon": "assets/images/skills/JavaScript.png" },
-  { "name": "Bootstrap", "icon": "assets/images/skills/Bootstrap.png" },
-  { "name": "Tailwind CSS", "icon": "assets/images/skills/Tailwind_CSS.png" },
-  { "name": "Python", "icon": "assets/images/skills/Python.png" },
-  { "name": "Django", "icon": "assets/images/skills/Django.png" },
-  { "name": "PHP", "icon": "assets/images/skills/PHP.png" },
-  { "name": "Kotlin", "icon": "assets/images/skills/Kotlin.png" },
-  { "name": "C++", "icon": "assets/images/skills/C++.png" },
-  { "name": "MySQL", "icon": "assets/images/skills/MySQL.png" },
-  { "name": "SQLite", "icon": "assets/images/skills/SQLite.png" },
-  { "name": "PostgreSQL", "icon": "assets/images/skills/PostgreSQL.png" },
-  { "name": "Git", "icon": "assets/images/skills/Git.png" },
-  { "name": "GitHub", "icon": "assets/images/skills/GitHub.png" },
-  { "name": "Linux", "icon": "assets/images/skills/Linux.png" },
-  { "name": "VS Code", "icon": "assets/images/skills/VS_Code.png" },
-  { "name": "REST API", "icon": "assets/images/skills/restapi.png" },
-  { "name": "JSON", "icon": "assets/images/skills/JSON.png" },
-  { "name": "Command Line", "icon": "assets/images/skills/Command_Line.png" },
+  {
+    "name": "HTML5",
+    "icon": "assets/images/skills/HTML5.png"
+  },
+  {
+    "name": "CSS3",
+    "icon": "assets/images/skills/CSS3.png"
+  },
+  {
+    "name": "JavaScript",
+    "icon": "assets/images/skills/JavaScript.png"
+  },
+  {
+    "name": "Bootstrap",
+    "icon": "assets/images/skills/Bootstrap.png"
+  },
+  {
+    "name": "Tailwind CSS",
+    "icon": "assets/images/skills/Tailwind_CSS.png"
+  },
+  {
+    "name": "Python",
+    "icon": "assets/images/skills/Python.png"
+  },
+  {
+    "name": "Django",
+    "icon": "assets/images/skills/Django.png"
+  },
+  {
+    "name": "PHP",
+    "icon": "assets/images/skills/PHP.png"
+  },
+  {
+    "name": "Kotlin",
+    "icon": "assets/images/skills/Kotlin.png"
+  },
+  {
+    "name": "C++",
+    "icon": "assets/images/skills/C++.png"
+  },
+  {
+    "name": "MySQL",
+    "icon": "assets/images/skills/MySQL.png"
+  },
+  {
+    "name": "SQLite",
+    "icon": "assets/images/skills/SQLite.png"
+  },
+  {
+    "name": "PostgreSQL",
+    "icon": "assets/images/skills/PostgreSQL.png"
+  },
+  {
+    "name": "Git",
+    "icon": "assets/images/skills/Git.png"
+  },
+  {
+    "name": "GitHub",
+    "icon": "assets/images/skills/GitHub.png"
+  },
+  {
+    "name": "Linux",
+    "icon": "assets/images/skills/Linux.png"
+  },
+  {
+    "name": "VS Code",
+    "icon": "assets/images/skills/VS_Code.png"
+  },
+  {
+    "name": "REST API",
+    "icon": "assets/images/skills/restapi.png"
+  },
+  {
+    "name": "JSON",
+    "icon": "assets/images/skills/JSON.png"
+  },
+  {
+    "name": "Command Line",
+    "icon": "assets/images/skills/Command_Line.png"
+  },
   {
     "name": "API Integration",
     "icon": "assets/images/skills/API_Integration.png"
   },
-  { "name": "yt-dlp", "icon": "assets/images/skills/ytdlp.png" },
-  { "name": "Docker", "icon": "assets/images/skills/Docker.png" },
-  { "name": "Nginx", "icon": "assets/images/skills/Nginx.png" }
+  {
+    "name": "yt-dlp",
+    "icon": "assets/images/skills/ytdlp.png"
+  },
+  {
+    "name": "Docker",
+    "icon": "assets/images/skills/Docker.png"
+  },
+  {
+    "name": "Nginx",
+    "icon": "assets/images/skills/Nginx.png"
+  }
 ]

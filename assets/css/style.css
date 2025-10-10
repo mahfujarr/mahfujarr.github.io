@@ -8,7 +8,7 @@
   text-decoration: none;
   outline: none;
   border: none;
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
   transition: all 0.2s linear;
 }
 html {
@@ -327,10 +327,10 @@ header .navbar ul li a:hover {
 /* hero media queries starts*/
 @media (max-width: 450px) {
   .home .btn {
-    margin: 4rem 0;
+    margin: 2rem 0;
   }
   .socials {
-    margin-top: 12rem;
+    margin-top: 10rem;
   }
   .home .image img {
     margin-top: -12rem;
@@ -437,6 +437,24 @@ header .navbar ul li a:hover {
 }
 /* about media queries starts*/
 @media screen and (max-width: 600px) {
+  .home .content h2 {
+    font-size: 3.5rem;
+  }
+  .home .content h2 span {
+    font-size: 3.5rem;
+  }
+  .home .content p {
+    font-size: 1.5rem;
+    color: #000;
+    font-weight: 600;
+    padding: 1rem 0;
+  }
+  .home .content p span {
+    font-size: 1.5rem;
+    color: rgb(148, 8, 8);
+    font-weight: 600;
+    padding: 1rem 0;
+  }
   .about .row .image {
     margin-top: 2rem;
   }
@@ -744,7 +762,7 @@ header .navbar ul li a:hover {
 .work .viewall .btn span {
   font-weight: 600;
   font-size: 1.7rem;
-  font-family: "Nunito", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 .work .viewall .btn i {
   margin-left: 0.3rem;

@@ -66,7 +66,7 @@ $(document).ready(function () {
     // scroll spy
     $("section").each(function () {
       let height = $(this).height();
-      let offset = $(this).offset().top - 200;
+      let offset = $(this).offset().top - (window.innerWidth <= 768 ? 100 : 200);
       let top = $(window).scrollTop();
       let id = $(this).attr("id");
 
@@ -80,9 +80,11 @@ $(document).ready(function () {
   // smooth scrolling
   $('a[href*="#"]').on("click", function (e) {
     e.preventDefault();
+    const target = $($(this).attr("href"));
+    const navbarHeight = window.innerWidth <= 768 ? 55 : 65;
     $("html, body").animate(
       {
-        scrollTop: $($(this).attr("href")).offset().top - 65,
+        scrollTop: target.offset().top - navbarHeight,
       },
       500,
       "linear"
@@ -124,11 +126,10 @@ document.addEventListener("visibilitychange", function () {
 // <!-- typed js effect starts -->
 var typed = new Typed(".typing-text", {
   strings: [
-    "frontend development",
-    "backend development",
-    "web designing",
-    "android development",
-    "web development",
+    "Web Development",
+    "Frontend Development",
+    "Backend Development",
+    "Web Designing",
   ],
   loop: true,
   typeSpeed: 50,
@@ -166,8 +167,8 @@ function showProjects(projects) {
   let projectsContainer = document.querySelector("#work .box-container");
   let projectHTML = "";
   projects
-    .slice(0, 10)
-    .filter((project) => project.category != "android")
+    .slice(0, 8)
+    // .filter((project) => project.category != "script")
     .forEach((project) => {
       const viewLink =
         project.links.view && project.links.view.trim() !== ""
