@@ -8,9 +8,9 @@ const toast = document.getElementById("toast");
 
 const profilePhotos = [
   "assets/images/profile.webp",
-  "assets/images/profile2.webp", // Add your second photo
-  "assets/images/profile3.webp", // Add your third photo
-  "assets/images/profile4.webp", // Add your fourth photo
+  "assets/images/profile2.webp",
+  "assets/images/profile3.webp",
+  "assets/images/profile4.webp",
 ];
 let currentPhotoIndex = 0;
 
@@ -19,11 +19,15 @@ function cycleProfilePhoto() {
   const profileImg = document.querySelector(".about .image img");
   if (profileImg && profilePhotos.length > 1) {
     currentPhotoIndex = (currentPhotoIndex + 1) % profilePhotos.length;
-    profileImg.style.opacity = "0";
-    setTimeout(() => {
-      profileImg.src = profilePhotos[currentPhotoIndex];
-      profileImg.style.opacity = "1";
-    }, 150);
+    const newImg = new Image();
+    newImg.onload = function () {
+      profileImg.style.opacity = "0";
+      setTimeout(() => {
+        profileImg.src = profilePhotos[currentPhotoIndex];
+        profileImg.style.opacity = "1";
+      }, 150);
+    };
+    newImg.src = profilePhotos[currentPhotoIndex];
   }
 }
 
@@ -42,7 +46,10 @@ $(document).ready(function () {
 
   // Profile image cycling on click
   $(".about .image img").click(function () {
-    showToast("Since you've clicked here, here's another photo of me ^_^", "success");
+    showToast(
+      "Since you've clicked here, here's another photo of me ^_^",
+      "success"
+    );
     cycleProfilePhoto();
   });
 
