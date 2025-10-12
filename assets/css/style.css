@@ -569,6 +569,7 @@ header .navbar ul li a:hover {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  cursor: default;
 }
 .education .box-container .box {
   display: flex;
@@ -588,14 +589,16 @@ header .navbar ul li a:hover {
   box-shadow: 1rem 0.5rem 1.2rem rgba(0, 0, 0, 0.3);
 }
 .education .box-container .box .image {
-  flex: 1 1 20rem;
+  flex: 0 0 20rem;
   width: 100%;
 }
 .education .box-container .box img {
+  display: block;
   object-fit: cover;
   position: relative;
-  width: 100%;
-  height: 100%;
+  width: 300px;
+  height: 200px;
+  overflow: hidden;
 }
 .education .box-container .box .content {
   position: relative;
@@ -638,6 +641,7 @@ header .navbar ul li a:hover {
     height: 25rem;
   }
   .education .box-container .box img {
+    display: block;
     width: 100%;
   }
   .education .box-container .box .content {

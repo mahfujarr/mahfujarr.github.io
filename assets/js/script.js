@@ -66,7 +66,8 @@ $(document).ready(function () {
     // scroll spy
     $("section").each(function () {
       let height = $(this).height();
-      let offset = $(this).offset().top - (window.innerWidth <= 768 ? 100 : 200);
+      let offset =
+        $(this).offset().top - (window.innerWidth <= 768 ? 100 : 200);
       let top = $(window).scrollTop();
       let id = $(this).attr("id");
 
@@ -126,10 +127,10 @@ document.addEventListener("visibilitychange", function () {
 // <!-- typed js effect starts -->
 var typed = new Typed(".typing-text", {
   strings: [
-    "Web Development",
-    "Frontend Development",
-    "Backend Development",
-    "Web Designing",
+    "Backend Development.",
+    "Frontend Development.",
+    "Scripting and Automation.",
+    "Problem Solving.",
   ],
   loop: true,
   typeSpeed: 50,
@@ -173,7 +174,7 @@ function showProjects(projects) {
       const viewLink =
         project.links.view && project.links.view.trim() !== ""
           ? `<a href="${project.links.view}" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a>`
-          : `<a class="btn disabled" style="pointer-events:none;opacity:0.6;"><i class="fas fa-eye"></i> View</a>`;
+          : `<span class="btn disabled" style="opacity:0.6; cursor:not-allowed;"><i class="fas fa-eye"></i> View</span>`;
 
       projectHTML += `
         <div class="box tilt">

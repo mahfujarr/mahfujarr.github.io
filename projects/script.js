@@ -125,19 +125,19 @@ var Tawk_API = Tawk_API || {},
 
 // disable developer mode
 document.onkeydown = function (e) {
-  if (e.keyCode == 123) {
+  if (e.key === "F12") {
     return false;
   }
-  if (e.ctrlKey && e.shiftKey && e.keyCode == "I".charCodeAt(0)) {
+  if (e.ctrlKey && e.shiftKey && e.key === "I") {
     return false;
   }
-  if (e.ctrlKey && e.shiftKey && e.keyCode == "C".charCodeAt(0)) {
+  if (e.ctrlKey && e.shiftKey && e.key === "C") {
     return false;
   }
-  if (e.ctrlKey && e.shiftKey && e.keyCode == "J".charCodeAt(0)) {
+  if (e.ctrlKey && e.shiftKey && e.key === "J") {
     return false;
   }
-  if (e.ctrlKey && e.keyCode == "U".charCodeAt(0)) {
+  if (e.ctrlKey && e.key === "u") {
     return false;
   }
 };
