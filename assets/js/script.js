@@ -46,11 +46,11 @@ $(document).ready(function () {
 
   // Profile image cycling on click
   $(".about .image img").click(function () {
+    cycleProfilePhoto();
     showToast(
       "Since you've clicked here, here's another photo of me ^_^",
       "success"
     );
-    cycleProfilePhoto();
   });
 
   $(window).on("scroll load", function () {
