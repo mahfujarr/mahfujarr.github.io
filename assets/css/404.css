@@ -7,7 +7,7 @@
   box-sizing: border-box;
   text-decoration: none;
   outline: none; border: none;
-  text-transform:capitalize;
+  /* text-transform:capitalize; */
   transition: all .2s linear;
 }
 html{
@@ -28,13 +28,13 @@ html{
   font-size: 62.5%;
   overflow-x: hidden;
 }
-html::-webkit-scrollbar{
-  width: .8rem;
+html::-webkit-scrollbar {
+  width: 0.5rem;
 }
-html::-webkit-scrollbar-track{
+html::-webkit-scrollbar-track {
   background: rgb(235, 202, 245);
 }
-html::-webkit-scrollbar-thumb{
+html::-webkit-scrollbar-thumb {
   background: #420177;
 }
 /* navbar starts */

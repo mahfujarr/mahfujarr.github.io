@@ -31,7 +31,7 @@ html {
   overflow-x: hidden;
 }
 html::-webkit-scrollbar {
-  width: 0.8rem;
+  width: 0.5rem;
 }
 html::-webkit-scrollbar-track {
   background: rgb(235, 202, 245);
@@ -162,7 +162,7 @@ header .navbar ul li a:hover {
 /* work section starts */
 .work {
   /* background: #010124; */
-  background: linear-gradient(to bottom, #010136, #00003a);
+  background: linear-gradient(to bottom, #420177, #00002c);
   margin-top: 5rem;
 }
 .work h2 {
@@ -221,7 +221,7 @@ header .navbar ul li a:hover {
 }
 .work .box-container .box img {
   display: block;
-  height: 200px;
+  height: 100%;
   min-width: 300px;
   width: 100%;
   object-fit: cover;
