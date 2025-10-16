@@ -8,7 +8,7 @@
   text-decoration: none;
   outline: none;
   border: none;
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
   transition: all 0.2s linear;
 }
 html {
@@ -200,10 +200,14 @@ header .navbar ul li a:hover {
   color: #000;
 }
 .work .box-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin: 0.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-content: center;
+  gap: 2rem;
+  padding: 0 1rem;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
 }
 .work .box-container .box {
   flex: 1 1 30rem;
@@ -217,7 +221,9 @@ header .navbar ul li a:hover {
 }
 .work .box-container .box img {
   display: block;
-  width: 300px;
+  height: 200px;
+  min-width: 300px;
+  width: 100%;
   object-fit: cover;
 }
 .work .box-container .box .content {
