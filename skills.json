@@ -62,9 +62,5 @@
   {
     "name": "VS Code",
     "icon": "assets/images/skills/VS_Code.png"
-  },
-  {
-    "name": "REST API",
-    "icon": "assets/images/skills/restapi.png"
   }
 ]
