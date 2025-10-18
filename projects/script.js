@@ -27,12 +27,10 @@ document.addEventListener("visibilitychange", function () {
 });
 
 // fetch projects start
-function getProjects() {
-  return fetch("projects.json")
-    .then((response) => response.json())
-    .then((data) => {
-      return data;
-    });
+async function getProjects() {
+  const response = await fetch("projects.json");
+  const data = await response.json();
+  return data;
 }
 
 function showProjects(projects) {
@@ -48,8 +46,8 @@ function showProjects(projects) {
     const viewTarget = project.links.view ? 'target="_blank"' : "";
 
     projectsHTML += `
-        <div class="grid-item ${project.category}">
-        <div class="box tilt" style="width: 380px; margin: 1rem">
+        <div class="grid-item ${project.category}" data-category="${project.category}">
+        <div class="box tilt">
       <img draggable="false" src="/assets/images/projects/${project.image}.png" alt="project" />
       <div class="content">
         <div class="tag">
@@ -69,40 +67,57 @@ function showProjects(projects) {
 
   projectsContainer.innerHTML = projectsHTML;
 
+  // Add staggered animation delay to each item
+  const gridItems = document.querySelectorAll(".grid-item");
+  gridItems.forEach((item, index) => {
+    item.style.animationDelay = `${index * 0.1}s`;
+  });
+
   // vanilla tilt.js
   VanillaTilt.init(document.querySelectorAll(".tilt"), {
-    max: 10,
-  });
-  // vanilla tilt.js
-
-  /* ===== SCROLL REVEAL ANIMATION ===== */
-  const srtop = ScrollReveal({
-    origin: "bottom",
-    distance: "80px",
-    duration: 1000,
-    reset: true,
+    max: 20,
   });
 
-  /* SCROLL PROJECTS */
-  srtop.reveal(".work .box", { interval: 200 });
+  // Simple filter functionality
+  setupFilters();
+}
 
-  // isotope filter products
-  var $grid = $(".box-container").isotope({
-    itemSelector: ".grid-item",
-    layoutMode: "fitRows",
-    masonry: {
-      columnWidth: 200,
-    },
-  });
+function setupFilters() {
+  const filterButtons = document.querySelectorAll(".button-group .btn");
+  const gridItems = document.querySelectorAll(".grid-item");
 
-  // filter items on button click
-  $(".button-group").on("click", "button", function () {
-    $(".button-group").find(".is-checked").removeClass("is-checked");
-    $(this).addClass("is-checked");
-    var filterValue = $(this).attr("data-filter");
-    $grid.isotope({ filter: filterValue });
+  filterButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      filterButtons.forEach((btn) => btn.classList.remove("is-checked"));
+      this.classList.add("is-checked");
+
+      const filterValue = this.getAttribute("data-filter");
+
+      gridItems.forEach((item) => {
+        item.style.animation = "none";
+        item.offsetHeight; // force reflow
+        item.style.animation = "";
+
+        const category = item.getAttribute("data-category");
+
+        if (filterValue === "*" || filterValue === "." + category) {
+          item.style.display = "block";
+        } else {
+          item.style.display = "none";
+        }
+      });
+
+      const visibleItems = Array.from(gridItems).filter(
+        (item) => item.style.display !== "none"
+      );
+      visibleItems.forEach((item, index) => {
+        item.style.animationDelay = `${index * 0.1}s`;
+        item.style.animation = "fadeInUp 0.5s ease forwards";
+      });
+    });
   });
 }
+
 
 getProjects().then((data) => {
   showProjects(data);
