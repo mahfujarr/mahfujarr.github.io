@@ -364,6 +364,5 @@ header .navbar ul li a:hover {
 /* Example CSS for the disabled state */
 .disabled-link {
   opacity: 0.6;
-  pointer-events: none;
-  cursor: default;
+  cursor: not-allowed;
 }

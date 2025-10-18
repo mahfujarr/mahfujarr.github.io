@@ -71,20 +71,20 @@ function showProjects(projects) {
 
   // vanilla tilt.js
   VanillaTilt.init(document.querySelectorAll(".tilt"), {
-      max: 20,
+    max: 10,
   });
   // vanilla tilt.js
 
   /* ===== SCROLL REVEAL ANIMATION ===== */
   const srtop = ScrollReveal({
-      origin: 'bottom',
-      distance: '80px',
-      duration: 1000,
-      reset: true
+    origin: "bottom",
+    distance: "80px",
+    duration: 1000,
+    reset: true,
   });
 
   /* SCROLL PROJECTS */
-  srtop.reveal('.work .box', { interval: 200 });
+  srtop.reveal(".work .box", { interval: 200 });
 
   // isotope filter products
   var $grid = $(".box-container").isotope({
