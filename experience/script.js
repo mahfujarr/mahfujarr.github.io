@@ -1,34 +1,41 @@
-$(document).ready(function(){
+$(document).ready(function () {
+  $("#menu").click(function () {
+    $(this).toggleClass("fa-times");
+    $(".navbar").toggleClass("nav-toggle");
+  });
+  // Scroll-top click handler
+  $("#scroll-top").click(function () {
+    $("html, body").animate(
+      {
+        scrollTop: 0,
+      },
+      500
+    );
+    return false;
+  });
+  $(window).on("scroll load", function () {
+    $("#menu").removeClass("fa-times");
+    $(".navbar").removeClass("nav-toggle");
 
-    $('#menu').click(function(){
-        $(this).toggleClass('fa-times');
-        $('.navbar').toggleClass('nav-toggle');
-    });
-
-    $(window).on('scroll load',function(){
-        $('#menu').removeClass('fa-times');
-        $('.navbar').removeClass('nav-toggle');
-
-        if(window.scrollY>60){
-            document.querySelector('#scroll-top').classList.add('active');
-        }else{
-            document.querySelector('#scroll-top').classList.remove('active');
-        }
-    });
+    if (window.scrollY > 60) {
+      document.querySelector("#scroll-top").classList.add("active");
+    } else {
+      document.querySelector("#scroll-top").classList.remove("active");
+    }
+  });
 });
 
 /* ===== SCROLL REVEAL ANIMATION ===== */
 const srtop = ScrollReveal({
-    origin: 'top',
-    distance: '80px',
-    duration: 1000,
-    reset: true
+  origin: "top",
+  distance: "80px",
+  duration: 1000,
+  reset: true,
 });
 
 /* SCROLL EXPERIENCE */
-srtop.reveal('.experience .timeline',{delay: 400});
-srtop.reveal('.experience .timeline .container',{interval: 400}); 
-
+srtop.reveal(".experience .timeline", { delay: 200 });
+srtop.reveal(".experience .timeline .container", { interval: 200 });
 
 //Start of Tawk.to Script
 var Tawk_API = Tawk_API || {},
@@ -43,7 +50,6 @@ var Tawk_API = Tawk_API || {},
   s0.parentNode.insertBefore(s1, s0);
 })();
 //End of Tawk.to Script
-
 
 // disable developer mode
 document.onkeydown = function (e) {
@@ -64,14 +70,12 @@ document.onkeydown = function (e) {
   }
 };
 
-document.addEventListener('visibilitychange',
-function(){
-    if(document.visibilityState === "visible"){
-        document.title = "Experience | Portfolio Mahfujar";
-        $("#favicon").attr("href","/assets/images/favicon.png");
-    }
-    else {
-        document.title = "Come Back To Portfolio";
-        $("#favicon").attr("href","/assets/images/favhand.png");
-    }
+document.addEventListener("visibilitychange", function () {
+  if (document.visibilityState === "visible") {
+    document.title = "Experience | Portfolio Mahfujar";
+    $("#favicon").attr("href", "/assets/images/favicon.png");
+  } else {
+    document.title = "Come Back To Portfolio";
+    $("#favicon").attr("href", "/assets/images/favhand.png");
+  }
 });

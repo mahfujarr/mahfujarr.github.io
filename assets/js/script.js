@@ -153,7 +153,7 @@ function showSkills(skills) {
   let skillHTML = "";
   skills.forEach((skill) => {
     skillHTML += `
-        <div class="bar">
+        <div class="bar tilt">
               <div class="info">
                 <img src=${skill.icon} alt="skill" />
                 <span style="cursor:default;">${skill.name}</span>
@@ -205,7 +205,7 @@ function showProjects(projects) {
 
   // <!-- tilt js effect starts -->
   VanillaTilt.init(document.querySelectorAll(".tilt"), {
-    max: 15,
+    max: 10,
   });
   // <!-- tilt js effect ends -->
 

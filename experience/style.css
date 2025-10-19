@@ -328,7 +328,7 @@ header .navbar ul li a:hover{
 
 /* footer section starts */
 .footer{
-  min-height: auto;
+  min-height: 0;
   padding-top: 0;
   background: rgb(0, 1, 43);
 }

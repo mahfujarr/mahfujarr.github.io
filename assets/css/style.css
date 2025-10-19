@@ -490,6 +490,14 @@ header .navbar ul li a:hover {
   min-height: 90vh;
   background: linear-gradient(to bottom, #57059e, #4a00e0);
 }
+.skills .quote {
+  color: #fff;
+  font-size: 1.5rem;
+  text-align: center;
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
 .skills h2 {
   color: #fff;
 }
@@ -675,6 +683,14 @@ header .navbar ul li a:hover {
   /* background: #010124; */
   background: linear-gradient(to bottom, #420177, #00002c);
 }
+.work .quote {
+  color: #fff;
+  font-size: 1.5rem;
+  text-align: center;
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
 .work h2 {
   color: #fff;
   padding: 1rem;
@@ -793,10 +809,17 @@ header .navbar ul li a:hover {
 /* work section ends */
 
 /* experience section starts */
+.experience .quote {
+  font-size: 1.5rem;
+  text-align: center;
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
 .experience .timeline {
   position: relative;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 2rem auto;
 }
 .experience .timeline::after {
   content: "";

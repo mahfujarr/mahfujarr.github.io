@@ -3,7 +3,16 @@ $(document).ready(function () {
     $(this).toggleClass("fa-times");
     $(".navbar").toggleClass("nav-toggle");
   });
-
+  // Scroll-top click handler
+  $("#scroll-top").click(function () {
+    $("html, body").animate(
+      {
+        scrollTop: 0,
+      },
+      500
+    );
+    return false;
+  });
   $(window).on("scroll load", function () {
     $("#menu").removeClass("fa-times");
     $(".navbar").removeClass("nav-toggle");
@@ -70,12 +79,12 @@ function showProjects(projects) {
   // Add staggered animation delay to each item
   const gridItems = document.querySelectorAll(".grid-item");
   gridItems.forEach((item, index) => {
-    item.style.animationDelay = `${index * 0.1}s`;
+    item.style.animationDelay = `${index * 0.2}s`;
   });
 
   // vanilla tilt.js
   VanillaTilt.init(document.querySelectorAll(".tilt"), {
-    max: 20,
+    max: 10,
   });
 
   // Simple filter functionality
@@ -112,12 +121,10 @@ function setupFilters() {
       );
       visibleItems.forEach((item, index) => {
         item.style.animationDelay = `${index * 0.1}s`;
-        item.style.animation = "fadeInUp 0.5s ease forwards";
       });
     });
   });
 }
-
 
 getProjects().then((data) => {
   showProjects(data);
