@@ -2,7 +2,7 @@ const srtop = ScrollReveal({
   origin: "top",
   distance: "20px",
   duration: 1000,
-  reset: true,
+  reset: false,
 });
 const toast = document.getElementById("toast");
 
