@@ -113,14 +113,18 @@ header .navbar ul li a {
   color: #0e2431;
   font-weight: 600;
   text-decoration: none;
+  padding: 0.5rem 0;
   letter-spacing: 0.04rem;
-  transition: 0.2s;
+  transition: all 0.3s ease;
+  border-bottom: 0.2rem solid transparent;
 }
-header .navbar ul li a.active,
-header .navbar ul li a:hover {
+header .navbar ul li a.active{
   color: #011aff;
   border-bottom: 0.2rem solid #011aff;
-  padding: 0.5rem 0;
+}
+header .navbar ul li a:hover {
+  color: #fc8c05;
+  border-bottom: 0.2rem solid #fc8c05;
 }
 /* navbar ends */
 
