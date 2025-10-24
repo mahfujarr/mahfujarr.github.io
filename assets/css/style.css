@@ -166,13 +166,18 @@ header .navbar ul li a:hover {
     text-align: left;
     color: #fff;
     font-size: 2rem;
-  }
-  header .navbar ul li a.active,
-  header .navbar ul li a:hover {
     padding: 1rem;
+    border-bottom: 0.5rem solid transparent;
+  }
+  header .navbar ul li a.active{
     color: #fff;
     border-radius: 0.5rem;
     border-bottom: 0.5rem solid #011aff;
+  }
+  header .navbar ul li a:hover {
+    color: #fc8c05;
+    border-radius: 0.5rem;
+    border-bottom: 0.5rem solid #fc8c05;
   }
   .fa-times {
     transform: rotate(180deg);
