@@ -380,6 +380,7 @@ header .navbar ul li a:hover {
 }
 .about .row .image img:hover {
   mix-blend-mode: normal;
+  box-shadow: 0 5px 10px #2506ad81;
 }
 .about .row .content {
   flex: 1 1 45rem;
