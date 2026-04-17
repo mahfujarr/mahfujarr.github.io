@@ -49,7 +49,7 @@ $(document).ready(function () {
     cycleProfilePhoto();
     showToast(
       "Since you've clicked here, here's another photo of me ^_^",
-      "success"
+      "success",
     );
   });
 
@@ -88,7 +88,7 @@ $(document).ready(function () {
         scrollTop: target.offset().top - navbarHeight,
       },
       500,
-      "linear"
+      "linear",
     );
   });
 
@@ -107,7 +107,7 @@ $(document).ready(function () {
         function (error) {
           console.log("FAILED...", error);
           showToast("Something went wrong. Retry?", "error");
-        }
+        },
       );
     event.preventDefault();
   });

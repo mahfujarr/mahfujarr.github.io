@@ -1304,7 +1304,9 @@ form .button-area {
   font-size: medium;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.4s, transform 0.4s;
+  transition:
+    opacity 0.4s,
+    transform 0.4s;
   transform: translateY(-20px);
   z-index: 9999;
 }
