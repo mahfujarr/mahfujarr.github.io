@@ -180,7 +180,7 @@ function showSkills(skills) {
     skillHTML += `
         <div class="bar tilt">
               <div class="info">
-                <img src=${skill.icon} alt="skill" />
+                <img src=${skill.icon} alt="${skill.name} logo" loading="lazy" decoding="async" />
                 <span style="cursor:default;">${skill.name}</span>
               </div>
             </div>`;
@@ -205,7 +205,7 @@ function showProjects(projects) {
         <div class="box tilt">
           <img draggable="false" src="/assets/images/projects/${
             project.image
-          }.png" alt="project" />
+          }.png" alt="${project.name} project preview" loading="lazy" decoding="async" />
           <div class="content">
             <div class="tag">
               <h3>${project.name}</h3>

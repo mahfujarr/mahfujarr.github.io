@@ -76,7 +76,7 @@ function showProjects(projects) {
     projectsHTML += `
         <div class="grid-item ${project.category}" data-category="${project.category}">
         <div class="box tilt">
-      <img draggable="false" src="/assets/images/projects/${project.image}.png" alt="project" />
+      <img draggable="false" src="/assets/images/projects/${project.image}.png" alt="${project.name} project preview" loading="lazy" decoding="async" />
       <div class="content">
         <div class="tag">
         <h3>${project.name}</h3>
