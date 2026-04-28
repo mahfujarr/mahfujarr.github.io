@@ -1,3 +1,28 @@
+// Hide/remove preloader once page fully loads
+window.addEventListener("load", () => {
+  const preloader = document.getElementById("preloader");
+  if (preloader) {
+    preloader.classList.add("loaded");
+    const remove = () => preloader?.remove();
+    preloader.addEventListener("transitionend", remove, { once: true });
+    setTimeout(remove, 1000); // fallback if transitionend doesn't fire
+  }
+});
+
+const navbar = document.querySelector(".navbar");
+fetch("../assets/components/navbar/navbar.html")
+  .then((res) => res.text())
+  .then((data) => {
+    navbar.innerHTML = data;
+  });
+
+const footer = document.querySelector(".footer");
+fetch("../assets/components/footer/footer.html")
+  .then((res) => res.text())
+  .then((data) => {
+    footer.innerHTML = data;
+  });
+
 const srtop = ScrollReveal({
   origin: "top",
   distance: "20px",
@@ -39,9 +64,9 @@ function showToast(message, type) {
   }, 3000);
 }
 $(document).ready(function () {
-  $("#menu").click(function () {
+  $(document).on("click", "#menu", function () {
     $(this).toggleClass("fa-times");
-    $(".navbar").toggleClass("nav-toggle");
+    $("header .navbar").toggleClass("nav-toggle");
   });
 
   // Profile image cycling on click
@@ -55,7 +80,7 @@ $(document).ready(function () {
 
   $(window).on("scroll load", function () {
     $("#menu").removeClass("fa-times");
-    $(".navbar").removeClass("nav-toggle");
+    $("header .navbar").removeClass("nav-toggle");
 
     if (window.scrollY > 60) {
       document.querySelector("#scroll-top").classList.add("active");
@@ -73,7 +98,7 @@ $(document).ready(function () {
 
       if (top > offset && top < offset + height) {
         $(".navbar ul li a").removeClass("active");
-        $(".navbar").find(`[href="#${id}"]`).addClass("active");
+        $("header .navbar").find(`[href="/#${id}"]`).addClass("active");
       }
     });
   });
@@ -227,25 +252,6 @@ VanillaTilt.init(document.querySelectorAll(".tilt"), {
   max: 15,
 });
 // <!-- tilt js effect ends -->
-
-// disable developer mode
-document.onkeydown = function (e) {
-  if (e.key === "F12") {
-    return false;
-  }
-  if (e.ctrlKey && e.shiftKey && e.key === "I") {
-    return false;
-  }
-  if (e.ctrlKey && e.shiftKey && e.key === "C") {
-    return false;
-  }
-  if (e.ctrlKey && e.shiftKey && e.key === "J") {
-    return false;
-  }
-  if (e.ctrlKey && e.key === "u") {
-    return false;
-  }
-};
 
 //Start of Tawk.to Script
 var Tawk_API = Tawk_API || {},

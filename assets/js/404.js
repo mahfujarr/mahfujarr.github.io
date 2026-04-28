@@ -1,25 +1,20 @@
+const navbar = document.querySelector(".navbar");
+fetch("../assets/components/navbar/navbar.html")
+  .then((res) => res.text())
+  .then((data) => {
+    navbar.innerHTML = data;
+  });
+
+const footer = document.querySelector(".footer");
+fetch("../assets/components/footer/footer.html")
+  .then((res) => res.text())
+  .then((data) => {
+    footer.innerHTML = data;
+  });
+
 $(document).ready(function () {
-  $("#menu").click(function () {
+  $(document).on("click", "#menu", function () {
     $(this).toggleClass("fa-times");
-    $(".navbar").toggleClass("nav-toggle");
+    $("header .navbar").toggleClass("nav-toggle");
   });
 });
-
-// disable developer mode
-document.onkeydown = function (e) {
-  if (e.key === "F12") {
-    return false;
-  }
-  if (e.ctrlKey && e.shiftKey && e.key === "I") {
-    return false;
-  }
-  if (e.ctrlKey && e.shiftKey && e.key === "C") {
-    return false;
-  }
-  if (e.ctrlKey && e.shiftKey && e.key === "J") {
-    return false;
-  }
-  if (e.ctrlKey && e.key === "u") {
-    return false;
-  }
-};

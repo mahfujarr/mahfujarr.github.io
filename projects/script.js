@@ -1,10 +1,29 @@
+const navbar = document.querySelector(".navbar");
+fetch("../assets/components/navbar/navbar.html")
+  .then((res) => res.text())
+  .then((data) => {
+    navbar.innerHTML = data;
+    // Highlight the work link in navbar
+    setTimeout(() => {
+      $(".navbar ul li a").removeClass("active");
+      $("header .navbar").find('[href="/#work"]').addClass("active");
+    }, 100);
+  });
+
+const footer = document.querySelector(".footer");
+fetch("../assets/components/footer/footer.html")
+  .then((res) => res.text())
+  .then((data) => {
+    footer.innerHTML = data;
+  });
+
 $(document).ready(function () {
-  $("#menu").click(function () {
+  $(document).on("click", "#menu", function () {
     $(this).toggleClass("fa-times");
-    $(".navbar").toggleClass("nav-toggle");
+    $("header .navbar").toggleClass("nav-toggle");
   });
   // Scroll-top click handler
-  $("#scroll-top").click(function () {
+  $(document).on("click", "#scroll-top", function () {
     $("html, body").animate(
       {
         scrollTop: 0,
@@ -144,22 +163,3 @@ var Tawk_API = Tawk_API || {},
   s0.parentNode.insertBefore(s1, s0);
 })();
 //End of Tawk.to Script
-
-// disable developer mode
-document.onkeydown = function (e) {
-  if (e.key === "F12") {
-    return false;
-  }
-  if (e.ctrlKey && e.shiftKey && e.key === "I") {
-    return false;
-  }
-  if (e.ctrlKey && e.shiftKey && e.key === "C") {
-    return false;
-  }
-  if (e.ctrlKey && e.shiftKey && e.key === "J") {
-    return false;
-  }
-  if (e.ctrlKey && e.key === "u") {
-    return false;
-  }
-};
