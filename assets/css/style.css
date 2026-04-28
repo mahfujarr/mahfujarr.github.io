@@ -375,7 +375,7 @@ html::-webkit-scrollbar-thumb {
 
 /* skills section starts */
 .skills {
-  min-height: 90vh;
+  min-height: 100vh;
   background: linear-gradient(to bottom, #57059e, #4a00e0);
 }
 .skills .quote {
@@ -458,7 +458,7 @@ html::-webkit-scrollbar-thumb {
 /* education section starts */
 .education {
   background: #e5ecfb;
-  min-height: 80vh;
+  min-height: 100vh;
 }
 .education .quote {
   font-size: 1.5rem;

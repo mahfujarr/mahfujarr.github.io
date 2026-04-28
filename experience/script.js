@@ -1,3 +1,14 @@
+// Hide/remove preloader once page fully loads
+window.addEventListener("load", () => {
+  const preloader = document.getElementById("preloader");
+  if (preloader) {
+    preloader.classList.add("loaded");
+    const remove = () => preloader?.remove();
+    preloader.addEventListener("transitionend", remove, { once: true });
+    setTimeout(remove, 1000);
+  }
+});
+
 const navbar = document.querySelector(".navbar");
 fetch("../assets/components/navbar/navbar.html")
   .then((res) => res.text())

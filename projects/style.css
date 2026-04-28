@@ -40,6 +40,32 @@ html::-webkit-scrollbar-thumb {
   background: #420177;
 }
 
+/* pre loader start */
+.loader-container {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  z-index: 99999;
+  transition:
+    opacity 0.5s ease,
+    visibility 0.5s ease;
+}
+.loader-container.loaded {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.loader {
+  width: 12rem;
+  height: 12rem;
+  display: block;
+  object-fit: contain;
+}
+/* pre loader end */
+
 /* work section starts */
 .work {
   /* background: #010124; */
