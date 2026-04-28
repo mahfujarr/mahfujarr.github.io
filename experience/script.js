@@ -1,5 +1,5 @@
 const navbar = document.querySelector(".navbar");
-fetch("../assets/components/navbar/navbar.html")
+fetch("/assets/components/navbar/navbar.html")
   .then((res) => res.text())
   .then((data) => {
     navbar.innerHTML = data;
@@ -11,7 +11,7 @@ fetch("../assets/components/navbar/navbar.html")
   });
 
 const footer = document.querySelector(".footer");
-fetch("../assets/components/footer/footer.html")
+fetch("/assets/components/footer/footer.html")
   .then((res) => res.text())
   .then((data) => {
     footer.innerHTML = data;

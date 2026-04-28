@@ -10,14 +10,14 @@ window.addEventListener("load", () => {
 });
 
 const navbar = document.querySelector(".navbar");
-fetch("../assets/components/navbar/navbar.html")
+fetch("/assets/components/navbar/navbar.html")
   .then((res) => res.text())
   .then((data) => {
     navbar.innerHTML = data;
   });
 
 const footer = document.querySelector(".footer");
-fetch("../assets/components/footer/footer.html")
+fetch("/assets/components/footer/footer.html")
   .then((res) => res.text())
   .then((data) => {
     footer.innerHTML = data;
@@ -32,10 +32,10 @@ const srtop = ScrollReveal({
 const toast = document.getElementById("toast");
 
 const profilePhotos = [
-  "assets/images/profile.webp",
-  "assets/images/profile2.webp",
-  "assets/images/profile3.webp",
-  "assets/images/profile4.webp",
+  "/assets/images/profile.webp",
+  "/assets/images/profile2.webp",
+  "/assets/images/profile3.webp",
+  "/assets/images/profile4.webp",
 ];
 let currentPhotoIndex = 0;
 
@@ -142,10 +142,10 @@ $(document).ready(function () {
 document.addEventListener("visibilitychange", function () {
   if (document.visibilityState === "visible") {
     document.title = "Portfolio | Mahfujar";
-    $("#favicon").attr("href", "assets/images/favicon.png");
+    $("#favicon").attr("href", "/assets/images/favicon.png");
   } else {
     document.title = "Come Back To Portfolio";
-    $("#favicon").attr("href", "assets/images/favhand.png");
+    $("#favicon").attr("href", "/assets/images/favhand.png");
   }
 });
 
@@ -166,9 +166,10 @@ var typed = new Typed(".typing-text", {
 
 async function fetchData(type = "skills") {
   let response;
-  type === "skills"
-    ? (response = await fetch("skills.json"))
-    : (response = await fetch("./projects/projects.json"));
+  response =
+    type === "skills"
+      ? await fetch("/skills.json")
+      : await fetch("/projects/projects.json");
   const data = await response.json();
   return data;
 }
