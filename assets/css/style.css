@@ -1170,6 +1170,134 @@ form .button-area {
   top: calc(100% - 12rem);
 }
 /* scroll top ends */
+html[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+html[data-theme="dark"] body {
+  background: #08111f;
+  color: #dbe7f6;
+}
+
+html[data-theme="dark"] *::selection {
+  background: #7aa2ff;
+  color: #08111f;
+}
+
+html[data-theme="dark"]::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+
+html[data-theme="dark"]::-webkit-scrollbar-thumb {
+  background: #7aa2ff;
+}
+
+html[data-theme="dark"] .loader-container {
+  background: #111a2e;
+}
+
+html[data-theme="dark"] .heading {
+  color: #f4f7fb;
+}
+
+html[data-theme="dark"] .heading span,
+html[data-theme="dark"] .about .row .content .box-container .box p span {
+  color: #7aa2ff;
+}
+
+html[data-theme="dark"] .home .content h2,
+html[data-theme="dark"] .home .content h2 span,
+html[data-theme="dark"] .home .content p,
+html[data-theme="dark"] .home .content p span,
+html[data-theme="dark"] .about .row .content h3,
+html[data-theme="dark"] .about .row .content .tag,
+html[data-theme="dark"] .about .row .content p,
+html[data-theme="dark"] .skills .quote,
+html[data-theme="dark"] .skills .container .bar .info span,
+html[data-theme="dark"] .education .quote,
+html[data-theme="dark"] .education .box-container .box .content h3,
+html[data-theme="dark"] .education .box-container .box .content p,
+html[data-theme="dark"] .education h4,
+html[data-theme="dark"] .work .quote,
+html[data-theme="dark"] .work .desc p {
+  color: #dbe7f6;
+}
+
+html[data-theme="dark"] .about {
+  background: #111a2e;
+}
+
+html[data-theme="dark"] .about .row .image img,
+html[data-theme="dark"] .education .box-container .box,
+html[data-theme="dark"] .work .box-container .box {
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.45);
+}
+
+html[data-theme="dark"] .about .row .content .tag {
+  color: #b4c0d4;
+}
+
+html[data-theme="dark"] .skills {
+  background: linear-gradient(to bottom, #10172a, #08111f);
+}
+
+html[data-theme="dark"] .skills .container {
+  background: rgba(13, 21, 38, 0.55);
+  color: #dbe7f6;
+}
+
+html[data-theme="dark"] .skills .container .bar {
+  background: rgba(13, 21, 38, 0.9);
+}
+
+html[data-theme="dark"] .skills .container .bar:hover {
+  background-color: rgba(3, 7, 18, 0.95) !important;
+}
+
+html[data-theme="dark"] .education {
+  background: #0b1323;
+}
+
+html[data-theme="dark"] .education .box-container .box {
+  background: #111a2e;
+}
+
+html[data-theme="dark"] .education .box-container .box .content h3 {
+  color: #f4f7fb;
+}
+
+html[data-theme="dark"] .education h4 {
+  color: #8ad27b;
+}
+
+html[data-theme="dark"] .work {
+  background: linear-gradient(to bottom, #0d1526, #08111f);
+}
+
+html[data-theme="dark"] .work .box-container .box .content {
+  background: rgba(13, 21, 38, 0.9);
+}
+
+html[data-theme="dark"] .work .box-container .box .content .tag {
+  background: #ffd900;
+}
+
+html[data-theme="dark"] .work .desc .btns .btn,
+html[data-theme="dark"] .home .btn,
+html[data-theme="dark"] .resumebtn .btn,
+html[data-theme="dark"] .backbtn .btn,
+html[data-theme="dark"] .morebtn .btn {
+  box-shadow: 0px 5px 18px rgba(43, 74, 220, 0.35);
+}
+
+html[data-theme="dark"] .work .desc .btns .btn {
+  background: #09011b;
+}
+
+html[data-theme="dark"] #scroll-top {
+  background: #ffae00;
+  color: #08111f;
+}
 
 /* Toast */
 #toast {

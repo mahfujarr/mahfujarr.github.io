@@ -300,3 +300,73 @@ html::-webkit-scrollbar-thumb {
   opacity: 0.6;
   cursor: not-allowed;
 }
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+html[data-theme="dark"] body {
+  background: #08111f;
+  color: #dbe7f6;
+}
+
+html[data-theme="dark"] *::selection {
+  background: #7aa2ff;
+  color: #08111f;
+}
+
+html[data-theme="dark"]::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+
+html[data-theme="dark"]::-webkit-scrollbar-thumb {
+  background: #7aa2ff;
+}
+
+html[data-theme="dark"] .loader-container {
+  background: #111a2e;
+}
+
+html[data-theme="dark"] .work {
+  background: linear-gradient(to bottom, #0d1526, #08111f);
+}
+
+html[data-theme="dark"] .work .quote,
+html[data-theme="dark"] .work h2,
+html[data-theme="dark"] .work .desc p,
+html[data-theme="dark"] .work .box-container .box .content .tag h3,
+html[data-theme="dark"] .backbtn .btn span {
+  color: #dbe7f6;
+}
+
+html[data-theme="dark"] .work .heading span {
+  color: #ffae42;
+}
+
+html[data-theme="dark"] .work .button-group .btn,
+html[data-theme="dark"] .backbtn .btn {
+  border-color: rgba(219, 231, 246, 0.35);
+}
+
+html[data-theme="dark"] .work .button-group .btn:hover,
+html[data-theme="dark"] .work .button-group .btn.is-checked {
+  background-color: rgba(255, 255, 255, 0.92);
+  color: #08111f;
+}
+
+html[data-theme="dark"] .work .box-container .box {
+  background: #111a2e;
+  box-shadow: 0 0.7rem 1rem rgba(0, 0, 0, 0.45);
+}
+
+html[data-theme="dark"] .work .box-container .box .content {
+  background: rgba(13, 21, 38, 0.9);
+}
+
+html[data-theme="dark"] .work .box-container .box .content .tag {
+  background: #ffd900;
+}
+
+html[data-theme="dark"] .work .desc .btns .btn {
+  background: #09011b;
+}
