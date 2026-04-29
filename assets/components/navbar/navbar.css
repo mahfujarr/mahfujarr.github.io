@@ -41,42 +41,39 @@ header {
   z-index: 1000;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 2rem;
   padding: 1.7rem 10%;
   height: 6.5rem;
   background-color: var(--page-nav-bg);
   box-shadow: var(--page-shadow);
 }
 
-header .header-actions {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-section {
-  min-height: 100vh;
-  padding: 2rem 9%;
-}
-.heading {
-  font-size: 3.5rem;
-  color: var(--page-heading);
-  font-weight: 800;
-  text-align: center;
-}
-.heading span {
-  color: var(--page-accent);
-}
 header .logo {
   font-size: 1.9rem;
   font-weight: 800;
   text-decoration: none;
   color: var(--page-nav-text);
+  white-space: nowrap;
+  flex-shrink: 0;
 }
+
 header .logo i {
   font-size: 2.2rem;
 }
+
 header .logo:hover {
   color: var(--page-nav-hover);
+}
+
+header .navbar {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+header .theme-toggle {
+  margin-left: auto;
+  flex-shrink: 0;
 }
 .theme-toggle {
   display: inline-flex;
@@ -91,6 +88,20 @@ header .logo:hover {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.08);
   cursor: pointer;
   flex-shrink: 0;
+}
+
+section {
+  min-height: 100vh;
+  padding: 2rem 9%;
+}
+.heading {
+  font-size: 3.5rem;
+  color: var(--page-heading);
+  font-weight: 800;
+  text-align: center;
+}
+.heading span {
+  color: var(--page-accent);
 }
 .theme-toggle:hover {
   color: var(--page-nav-hover);
@@ -144,10 +155,22 @@ header .navbar ul li a:hover {
   color: var(--page-accent);
   display: none;
 }
-@media (max-width: 768px) {
+@media (max-width: 992px) {
+  header {
+    padding: 1.7rem 5%;
+  }
+
   #menu {
     display: block;
+    /* margin-left: auto; */
+    flex-shrink: 0;
   }
+
+  header .theme-toggle {
+    margin-right: 0;
+    flex-shrink: 0;
+  }
+
   header .navbar {
     position: fixed;
     top: 6.5rem;
@@ -157,11 +180,14 @@ header .navbar ul li a:hover {
     text-align: left;
     align-items: flex-start;
     background-color: var(--page-nav-bg);
+    flex: none;
   }
+
   header .navbar ul {
     flex-flow: column;
     padding: 1rem;
   }
+
   header .navbar ul li {
     text-align: center;
     width: 100%;
@@ -169,6 +195,7 @@ header .navbar ul li a:hover {
     border-radius: 0.5rem;
     width: 26rem;
   }
+
   header .navbar ul li a {
     display: block;
     padding: 1rem;
@@ -178,19 +205,23 @@ header .navbar ul li a:hover {
     padding: 1rem;
     border-bottom: 0.5rem solid transparent;
   }
+
   header .navbar ul li a.active {
     color: var(--page-accent);
     border-radius: 0.5rem;
     border-bottom: 0.5rem solid var(--page-accent);
   }
+
   header .navbar ul li a:hover {
     color: var(--page-nav-hover);
     border-radius: 0.5rem;
     border-bottom: 0.5rem solid var(--page-nav-hover);
   }
+
   .fa-times {
-    transform: rotate(180deg);
+    transform: rotate(90deg);
   }
+
   header .navbar.nav-toggle {
     right: 0;
   }
