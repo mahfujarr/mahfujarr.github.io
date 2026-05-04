@@ -112,10 +112,20 @@ function showProjects(projects) {
     item.style.animationDelay = `${index * 0.2}s`;
   });
 
-  // vanilla tilt.js
-  VanillaTilt.init(document.querySelectorAll(".tilt"), {
-    max: 10,
-  });
+  // vanilla tilt.js - only initialize on non-touch devices
+  function isTouchDevice() {
+    return (
+      (typeof window !== "undefined" && "ontouchstart" in window) ||
+      (navigator && navigator.maxTouchPoints && navigator.maxTouchPoints > 0) ||
+      (window.matchMedia && window.matchMedia("(pointer: coarse)").matches)
+    );
+  }
+
+  if (!isTouchDevice()) {
+    VanillaTilt.init(document.querySelectorAll(".tilt"), {
+      max: 10,
+    });
+  }
 
   // Simple filter functionality
   setupFilters();

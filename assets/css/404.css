@@ -137,3 +137,41 @@ html::-webkit-scrollbar-thumb {
   top: calc(100% - 12rem);
 }
 /* scroll top ends */
+html[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+html[data-theme="dark"] body {
+  background: #08111f;
+  color: #dbe7f6;
+}
+
+html[data-theme="dark"] *::selection {
+  background: #7aa2ff;
+  color: #08111f;
+}
+
+html[data-theme="dark"]::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+
+html[data-theme="dark"]::-webkit-scrollbar-thumb {
+  background: #7aa2ff;
+}
+
+html[data-theme="dark"] .loader-container {
+  background: #111a2e;
+}
+
+html[data-theme="dark"] .page_404 {
+  background: #111a2e;
+}
+
+html[data-theme="dark"] .msg h3,
+html[data-theme="dark"] .msg p {
+  color: #dbe7f6;
+}
+
+html[data-theme="dark"] .backbtn .btn {
+  border: 1px solid rgba(219, 231, 246, 0.35);
+}

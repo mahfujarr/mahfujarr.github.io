@@ -164,6 +164,15 @@ var typed = new Typed(".typing-text", {
 });
 // <!-- typed js effect ends -->
 
+// Helper: detect touch-capable devices
+function isTouchDevice() {
+  return (
+    (typeof window !== "undefined" && "ontouchstart" in window) ||
+    (navigator && navigator.maxTouchPoints && navigator.maxTouchPoints > 0) ||
+    (window.matchMedia && window.matchMedia("(pointer: coarse)").matches)
+  );
+}
+
 async function fetchData(type = "skills") {
   let response;
   type === "skills"
@@ -229,9 +238,11 @@ function showProjects(projects) {
   projectsContainer.innerHTML = projectHTML;
 
   // <!-- tilt js effect starts -->
-  VanillaTilt.init(document.querySelectorAll(".tilt"), {
-    max: 10,
-  });
+  if (!isTouchDevice()) {
+    VanillaTilt.init(document.querySelectorAll(".tilt"), {
+      max: 10,
+    });
+  }
   // <!-- tilt js effect ends -->
 
   /* ===== SCROLL REVEAL ANIMATION ===== */
@@ -248,9 +259,11 @@ fetchData("projects").then((data) => {
 });
 
 // <!-- tilt js effect starts -->
-VanillaTilt.init(document.querySelectorAll(".tilt"), {
-  max: 15,
-});
+if (!isTouchDevice()) {
+  VanillaTilt.init(document.querySelectorAll(".tilt"), {
+    max: 15,
+  });
+}
 // <!-- tilt js effect ends -->
 
 //Start of Tawk.to Script

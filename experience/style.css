@@ -267,3 +267,61 @@ html::-webkit-scrollbar-thumb {
   top: calc(100% - 12rem);
 }
 /* scroll top ends */
+html[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+html[data-theme="dark"] body {
+  background: #08111f;
+  color: #dbe7f6;
+}
+
+html[data-theme="dark"] *::selection {
+  background: #7aa2ff;
+  color: #08111f;
+}
+
+html[data-theme="dark"]::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+
+html[data-theme="dark"]::-webkit-scrollbar-thumb {
+  background: #7aa2ff;
+}
+
+html[data-theme="dark"] .loader-container {
+  background: #111a2e;
+}
+
+html[data-theme="dark"] .experience .quote,
+html[data-theme="dark"] .experience .content .desc h3,
+html[data-theme="dark"] .experience .content .desc p,
+html[data-theme="dark"] .experience .content .tag h2,
+html[data-theme="dark"] .morebtn .btn span {
+  color: #dbe7f6;
+}
+
+html[data-theme="dark"] .experience .heading span {
+  color: #ffae42;
+}
+
+html[data-theme="dark"] .experience .timeline::after {
+  background: #7aa2ff;
+}
+
+html[data-theme="dark"] .experience .container::after {
+  background-color: #111a2e;
+  color: #f4f7fb;
+}
+
+html[data-theme="dark"] .experience .content {
+  box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.4);
+}
+
+html[data-theme="dark"] .morebtn .btn {
+  border: 2px solid rgba(219, 231, 246, 0.35);
+}
+
+html[data-theme="dark"] .experience .container::before {
+  border-color: transparent #f68c09 transparent transparent;
+}
