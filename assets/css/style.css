@@ -1168,10 +1168,10 @@ html[data-theme="dark"] .about .row .content .box-container .box p span {
 }
 
 html[data-theme="dark"] .home .content h2,
-html[data-theme="dark"] .home .content h2 span,
+/* html[data-theme="dark"] .home .content h2 span, */
 html[data-theme="dark"] .home .content p,
-html[data-theme="dark"] .home .content p span,
-html[data-theme="dark"] .about .row .content h3,
+/* html[data-theme="dark"] .home .content p span, */
+/* html[data-theme="dark"] .about .row .content h3, */
 html[data-theme="dark"] .about .row .content .tag,
 html[data-theme="dark"] .about .row .content p,
 html[data-theme="dark"] .skills .quote,
@@ -1183,6 +1183,14 @@ html[data-theme="dark"] .education h4,
 html[data-theme="dark"] .work .quote,
 html[data-theme="dark"] .work .desc p {
   color: var(--dark-text-secondary);
+}
+
+html[data-theme="dark"] .home .content p span {
+  color: var(--color-secondary);
+}
+
+html[data-theme="dark"] .about .row .content h3 {
+  color: var(--dark-accent);
 }
 
 html[data-theme="dark"] .about {
@@ -1236,6 +1244,10 @@ html[data-theme="dark"] .education h4 {
   color: var(--dark-accent-green);
 }
 
+html[data-theme="dark"] .work .box-container .box .content .tag h3 {
+  color: #08111f;
+}
+
 html[data-theme="dark"] .work {
   background: linear-gradient(
     to bottom,
@@ -1246,6 +1258,16 @@ html[data-theme="dark"] .work {
 
 html[data-theme="dark"] .work .box-container .box .content {
   background: rgba(13, 21, 38, 0.9);
+}
+
+html[data-theme="dark"] .experience .content .tag h2,
+h3,
+p {
+  color: #08111f;
+}
+
+html[data-theme="dark"] .experience .timeline::after {
+  background: #7aa2ff;
 }
 
 /* Dark theme - contact section */
