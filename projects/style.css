@@ -334,7 +334,7 @@ html[data-theme="dark"] .work {
 html[data-theme="dark"] .work .quote,
 html[data-theme="dark"] .work h2,
 html[data-theme="dark"] .work .desc p,
-html[data-theme="dark"] .work .box-container .box .content .tag h3,
+/* html[data-theme="dark"] .work .box-container .box .content .tag h3, */
 html[data-theme="dark"] .backbtn .btn span {
   color: #dbe7f6;
 }
@@ -342,7 +342,9 @@ html[data-theme="dark"] .backbtn .btn span {
 html[data-theme="dark"] .work .heading span {
   color: #ffae42;
 }
-
+html[data-theme="dark"] .work .box-container .box .content .tag h3{
+  color: #08111f;
+}
 html[data-theme="dark"] .work .button-group .btn,
 html[data-theme="dark"] .backbtn .btn {
   border-color: rgba(219, 231, 246, 0.35);
