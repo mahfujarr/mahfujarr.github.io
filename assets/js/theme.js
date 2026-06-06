@@ -27,11 +27,11 @@ setThemeInDOM(getTheme());
 window.addEventListener("load", () => {
   if (document.documentElement.getAttribute("data-theme") !== "dark") return;
 
-  setTimeout(() => {
-    if (typeof showToast === "function") {
-      showToast("This website is best in light mode", "success");
-    }
-  }, 200);
+  // setTimeout(() => {
+  //   if (typeof showToast === "function") {
+  //     showToast("This website is best in light mode", "success");
+  //   }
+  // }, 200);
 });
 
 document.addEventListener("click", (event) => {
@@ -42,7 +42,7 @@ document.addEventListener("click", (event) => {
 
   setThemeAndSave(newTheme);
 
-  if (newTheme === "dark") {
-    showToast("This website is best in light mode", "success");
-  }
+  // if (newTheme === "dark") {
+  //   showToast("This website is best in light mode", "success");
+  // }
 });
