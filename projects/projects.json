@@ -10,6 +10,16 @@
     }
   },
   {
+    "name": "PatchPile",
+    "desc": "A release mirror for automatically patched APKs of YouTube, YT Music, Google Photos, and Instagram.",
+    "image": "patchpile",
+    "category": "website",
+    "links": {
+      "view": "https://mahfujarr.me/patchpile",
+      "code": "https://github.com/mahfujarr/patchpile"
+    }
+  },
+  {
     "name": "Library Management System",
     "desc": "A library management system for my C++ course. It is a console-based application & has no GUI",
     "image": "lms",
