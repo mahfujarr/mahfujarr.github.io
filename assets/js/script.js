@@ -34,7 +34,7 @@ const toast = document.getElementById("toast");
 const profilePhotos = [
   "assets/images/profile.webp",
   "assets/images/profile2.webp",
-  "assets/images/profile3.webp",
+  // "assets/images/profile3.webp",
   "assets/images/profile4.webp",
 ];
 let currentPhotoIndex = 0;
