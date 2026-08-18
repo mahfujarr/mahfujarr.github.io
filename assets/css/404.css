@@ -166,6 +166,9 @@ html[data-theme="dark"] .loader-container {
 html[data-theme="dark"] .page_404 {
   background: #111a2e;
 }
+html[data-theme="dark"] .wrapper {
+  background-image: url(../images/404_cat.gif);
+}
 
 html[data-theme="dark"] .msg h3,
 html[data-theme="dark"] .msg p {
