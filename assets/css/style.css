@@ -156,15 +156,23 @@ html::-webkit-scrollbar-thumb {
   left: 0;
   height: 100%;
   width: 100%;
+  pointer-events: none;
 }
 .home .content {
   flex: 1 1 40rem;
   padding-top: 1rem;
   z-index: 1;
+  pointer-events: none;
 }
 .home .image {
   flex: 1 1 40rem;
   z-index: 1;
+  pointer-events: none;
+}
+.home .btn,
+.home .social-icons a,
+.home .image img {
+  pointer-events: auto;
 }
 .home .image img {
   width: 70%;
