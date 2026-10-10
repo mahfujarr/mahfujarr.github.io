@@ -84,6 +84,13 @@ function showProjects(projects) {
     const viewClass = project.links.view ? "" : "disabled-link";
     const viewTarget = project.links.view ? 'target="_blank"' : "";
 
+    const techBadges =
+      Array.isArray(project.tech) && project.tech.length > 0
+        ? `<div class="project-tech">${project.tech
+            .map((t) => `<span class="tech-badge">${t}</span>`)
+            .join("")}</div>`
+        : "";
+
     projectsHTML += `
         <div class="grid-item ${project.category}" data-category="${project.category}">
         <div class="box tilt">
@@ -94,6 +101,7 @@ function showProjects(projects) {
         </div>
         <div class="desc">
           <p>${project.desc}</p>
+          ${techBadges}
           <div class="btns">
             <a href="${viewLink}" class="btn view-btn ${viewClass}" ${viewTarget}><i class="fas fa-eye"></i> View</a>
             <a href="${project.links.code}" class="btn" target="_blank">Code <i class="fas fa-code"></i></a>

@@ -63,89 +63,135 @@ function showToast(message, type) {
     toast.className = toast.className.replace("show", "");
   }, 3000);
 }
-$(document).ready(function () {
-  $(document).on("click", "#menu", function () {
-    $(this).toggleClass("fa-times");
-    $("header .navbar").toggleClass("nav-toggle");
-  });
+// Toggle mobile navigation
+document.addEventListener("click", function (e) {
+  const menuBtn = e.target.closest("#menu");
+  if (menuBtn) {
+    menuBtn.classList.toggle("fa-times");
+    const nav = document.querySelector("header .navbar");
+    if (nav) nav.classList.toggle("nav-toggle");
+  }
+});
 
-  // Profile image cycling on click
-  $(".about .image img").click(function () {
+// Profile image cycling on click
+document.addEventListener("click", function (e) {
+  if (e.target.closest(".about .image img")) {
     cycleProfilePhoto();
     showToast(
       "Since you've clicked here, here's another photo of me ^_^",
       "success",
     );
-  });
-
-  $(window).on("scroll load", function () {
-    $("#menu").removeClass("fa-times");
-    $("header .navbar").removeClass("nav-toggle");
-
-    if (window.scrollY > 60) {
-      document.querySelector("#scroll-top").classList.add("active");
-    } else {
-      document.querySelector("#scroll-top").classList.remove("active");
-    }
-
-    // scroll spy
-    $("section").each(function () {
-      let height = $(this).height();
-      let offset =
-        $(this).offset().top - (window.innerWidth <= 768 ? 100 : 200);
-      let top = $(window).scrollTop();
-      let id = $(this).attr("id");
-
-      if (top > offset && top < offset + height) {
-        $(".navbar ul li a").removeClass("active");
-        $("header .navbar").find(`[href="/#${id}"]`).addClass("active");
-      }
-    });
-  });
-
-  // smooth scrolling
-  $('a[href*="#"]').on("click", function (e) {
-    e.preventDefault();
-    const target = $($(this).attr("href"));
-    const navbarHeight = window.innerWidth <= 768 ? 55 : 65;
-    $("html, body").animate(
-      {
-        scrollTop: target.offset().top - navbarHeight,
-      },
-      500,
-      "linear",
-    );
-  });
-
-  // <!-- emailjs to mail contact form data -->
-  $("#contact-form").submit(function (event) {
-    emailjs.init("6aenJm83oWfvaPDTd");
-
-    emailjs
-      .sendForm("mahfujarr_portfolio", "template_d7uy1y4", "#contact-form")
-      .then(
-        function (response) {
-          console.log("SUCCESS!", response.status, response.text);
-          document.getElementById("contact-form").reset();
-          showToast("Message received, Thanks!", "success");
-        },
-        function (error) {
-          console.log("FAILED...", error);
-          showToast("Something went wrong. Retry?", "error");
-        },
-      );
-    event.preventDefault();
-  });
-  // <!-- emailjs to mail contact form data -->
+  }
 });
 
+// Scroll listener: scroll-to-top button visibility & scroll spy
+function handleScroll() {
+  const menuBtn = document.getElementById("menu");
+  const nav = document.querySelector("header .navbar");
+  if (menuBtn) menuBtn.classList.remove("fa-times");
+  if (nav) nav.classList.remove("nav-toggle");
+
+  const scrollTopBtn = document.getElementById("scroll-top");
+  if (scrollTopBtn) {
+    if (window.scrollY > 60) {
+      scrollTopBtn.classList.add("active");
+    } else {
+      scrollTopBtn.classList.remove("active");
+    }
+  }
+
+  // Scroll spy active link tracking
+  const offsetPadding = window.innerWidth <= 768 ? 100 : 200;
+  const scrollPos = window.scrollY;
+  const sections = document.querySelectorAll("section[id]");
+
+  sections.forEach((section) => {
+    const top = section.offsetTop - offsetPadding;
+    const height = section.offsetHeight;
+    const id = section.getAttribute("id");
+
+    if (scrollPos >= top && scrollPos < top + height) {
+      document.querySelectorAll(".navbar ul li a").forEach((a) => a.classList.remove("active"));
+      const activeLink = document.querySelector(`header .navbar a[href="/#${id}"]`);
+      if (activeLink) activeLink.classList.add("active");
+    }
+  });
+}
+
+window.addEventListener("scroll", handleScroll, { passive: true });
+window.addEventListener("load", handleScroll);
+
+// Smooth scrolling with navbar offset
+document.addEventListener("click", function (e) {
+  const link = e.target.closest('a[href^="#"], a[href^="/#"]');
+  if (!link) return;
+
+  const href = link.getAttribute("href");
+  const hashIndex = href.indexOf("#");
+  if (hashIndex === -1) return;
+
+  const targetId = href.substring(hashIndex + 1);
+  if (!targetId) return;
+
+  const targetEl = document.getElementById(targetId);
+  if (targetEl) {
+    e.preventDefault();
+    const navbarHeight = window.innerWidth <= 768 ? 55 : 65;
+    const targetPosition = targetEl.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+    window.scrollTo({
+      top: targetPosition,
+      behavior: "smooth",
+    });
+  }
+});
+
+// Scroll to top button click
+document.addEventListener("click", function (e) {
+  if (e.target.closest("#scroll-top")) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+});
+
+// EmailJS contact form submission
+document.addEventListener("DOMContentLoaded", function () {
+  const contactForm = document.getElementById("contact-form");
+  if (contactForm) {
+    contactForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+      if (typeof emailjs !== "undefined") {
+        emailjs.init("6aenJm83oWfvaPDTd");
+        emailjs
+          .sendForm("mahfujarr_portfolio", "template_d7uy1y4", "#contact-form")
+          .then(
+            function (response) {
+              console.log("SUCCESS!", response.status, response.text);
+              contactForm.reset();
+              showToast("Message received, Thanks!", "success");
+            },
+            function (error) {
+              console.log("FAILED...", error);
+              showToast("Something went wrong. Retry?", "error");
+            },
+          );
+      }
+    });
+  }
+});
+
+const ageEl = document.getElementById("author-age");
+if (ageEl) {
+  ageEl.textContent = new Date().getFullYear() - 2002;
+}
+
 document.addEventListener("visibilitychange", function () {
+  const favicon = document.getElementById("favicon");
   if (document.visibilityState === "visible") {
     document.title = "Portfolio | Mahfujar";
-    $("#favicon").attr("href", "assets/images/favicon.png");
+    if (favicon) favicon.setAttribute("href", "/assets/images/favicon.png");
   } else {
     document.title = "Come Back To Portfolio";
-    $("#favicon").attr("href", "assets/images/favhand.png");
+    if (favicon) favicon.setAttribute("href", "/assets/images/favhand.png");
   }
 });
 
@@ -189,12 +235,18 @@ function showSkills(skills) {
     skillHTML += `
         <div class="bar tilt">
               <div class="info">
-                <img src=${skill.icon} alt="${skill.name} logo" loading="lazy" decoding="async" />
+                <img src="${skill.icon}" alt="${skill.name} logo" loading="lazy" decoding="async" />
                 <span style="cursor:default;">${skill.name}</span>
               </div>
             </div>`;
   });
   skillsContainer.innerHTML = skillHTML;
+  if (!isTouchDevice() && typeof VanillaTilt !== "undefined") {
+    VanillaTilt.init(skillsContainer.querySelectorAll(".tilt"), {
+      max: 15,
+      speed: 400,
+    });
+  }
   srtop.reveal(".skills .container .bar", { interval: 50 });
 }
 
@@ -203,12 +255,18 @@ function showProjects(projects) {
   let projectHTML = "";
   projects
     .slice(0, 8)
-    // .filter((project) => project.category != "script")
     .forEach((project) => {
       const viewLink =
         project.links.view && project.links.view.trim() !== ""
           ? `<a href="${project.links.view}" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a>`
           : `<span class="btn disabled" style="opacity:0.6; cursor:not-allowed;"><i class="fas fa-eye"></i> View</span>`;
+
+      const techBadges =
+        Array.isArray(project.tech) && project.tech.length > 0
+          ? `<div class="project-tech">${project.tech
+              .map((t) => `<span class="tech-badge">${t}</span>`)
+              .join("")}</div>`
+          : "";
 
       projectHTML += `
         <div class="box tilt">
@@ -225,6 +283,7 @@ function showProjects(projects) {
                   ? project.desc.substring(0, 100) + "..."
                   : project.desc
               }</p>
+              ${techBadges}
               <div class="btns">
                 ${viewLink}
                 <a href="${
@@ -237,13 +296,12 @@ function showProjects(projects) {
     });
   projectsContainer.innerHTML = projectHTML;
 
-  // <!-- tilt js effect starts -->
-  // if (!isTouchDevice()) {
-  //   VanillaTilt.init(document.querySelectorAll(".tilt"), {
-  //     max: 10,
-  //   });
-  // }
-  // <!-- tilt js effect ends -->
+  if (!isTouchDevice() && typeof VanillaTilt !== "undefined") {
+    VanillaTilt.init(projectsContainer.querySelectorAll(".tilt"), {
+      max: 10,
+      speed: 400,
+    });
+  }
 
   /* ===== SCROLL REVEAL ANIMATION ===== */
   /* SCROLL PROJECTS */

@@ -4,6 +4,7 @@
     "desc": "Personal Finance Tracker Website with individual dashboard made with raw PHP & MySQL. I have made it for my DBMS Course's project.",
     "image": "xpense",
     "category": "website",
+    "tech": ["PHP", "MySQL", "JavaScript", "HTML/CSS"],
     "links": {
       "view": "https://xpense.free.nf",
       "code": "https://github.com/mahfujarr/Xpense"
@@ -14,6 +15,7 @@
     "desc": "A release mirror for automatically patched APKs of YouTube, YT Music, Google Photos, and Instagram.",
     "image": "patchpile",
     "category": "website",
+    "tech": ["Python", "Shell", "CI/CD", "Android"],
     "links": {
       "view": "https://mahfujarr.me/patchpile",
       "code": "https://github.com/mahfujarr/patchpile"
@@ -24,6 +26,7 @@
     "desc": "A library management system for my C++ course. It is a console-based application & has no GUI",
     "image": "lms",
     "category": "console",
+    "tech": ["C++", "OOP", "File I/O"],
     "links": {
       "view": "",
       "code": "https://github.com/mahfujarr/LMS"
@@ -34,6 +37,7 @@
     "desc": "Runs an ADB (Android Debug Bridge) command in loop for all the packages in the .txt file.",
     "image": "adbloop",
     "category": "script",
+    "tech": ["Shell", "ADB", "Android", "Automation"],
     "links": {
       "view": "",
       "code": "https://github.com/mahfujarr/ADBloop"
@@ -44,6 +48,7 @@
     "desc": "A Finance tracker application in C++ that logs the finance in a simple .txt file in terminal.",
     "image": "pft",
     "category": "console",
+    "tech": ["C++", "CLI", "File I/O"],
     "links": {
       "view": "",
       "code": "https://github.com/mahfujarr/FinanceTrackerInCpp"
@@ -54,6 +59,7 @@
     "desc": "A simple IoT project that uses an ESP32 microcontroller to control a switch via a web interface.",
     "image": "esp32Switch",
     "category": "iot",
+    "tech": ["C++", "ESP32", "IoT", "Web Server"],
     "links": {
       "view": "",
       "code": "https://github.com/mahfujarr/ESP32-Switch"
@@ -64,6 +70,7 @@
     "desc": "A portfolio website for myself in Django. I've learned a lot of django backend things building this.",
     "image": "portfolioDjango",
     "category": "website",
+    "tech": ["Django", "Python", "SQLite", "Bootstrap"],
     "links": {
       "view": "https://mahfujarr.pythonanywhere.com/",
       "code": "https://github.com/mahfujarr/MyWebsite"

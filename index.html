@@ -46,14 +46,21 @@
   <meta property="og:description"
     content="Welcome to Mahfujar's Portfolio. Full-Stack Web Developer and lifelong learner." />
   <meta property="og:url" content="https://mahfujarr.me/" />
-  <meta property="og:image" content="https://mahfujarr.me/assets/images/hero.webp" />
+  <meta property="og:image" content="https://mahfujarr.me/assets/images/hero.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Portfolio | Mahfujar" />
   <meta name="twitter:description"
     content="Welcome to Mahfujar's Portfolio. Full-Stack Web Developer and lifelong learner." />
-  <meta name="twitter:image" content="https://mahfujarr.me/assets/images/hero.webp" />
-  <link rel="preload" as="image" href="/assets/images/hero.webp" type="image/webp" />
+  <meta name="twitter:image" content="https://mahfujarr.me/assets/images/hero.png" />
+  <link rel="preload" as="image" href="/assets/images/hero.png" type="image/png" />
   <meta name="google-site-verification" content="KgELTklIqoqKGpINp0_8ISjxr3Rc7FUYusI3krN1HYw" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Poppins:wght@400;600;700&display=swap">
+  <!-- Component CSS -->
+  <link rel="stylesheet" href="/assets/components/navbar/navbar.css">
+  <link rel="stylesheet" href="/assets/components/footer/footer.css">
   <!-- Custom CSS -->
   <link rel="stylesheet" href="/assets/css/style.css">
   <script src="/assets/js/theme.js"></script>
@@ -62,7 +69,7 @@
     integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!-- Favicon -->
-  <link id='favicon' rel="shortcut icon" href="assets/images/favicon.png" type="image/x-png">
+  <link id='favicon' rel="shortcut icon" href="/assets/images/favicon.png" type="image/x-png">
   <meta name="theme-color" content="#ffffff">
   <title>Portfolio | Mahfujar</title>
 </head>
@@ -132,11 +139,7 @@
 
         <div class="box-container">
           <div class="box">
-            <p><span> Age: </span>
-              <script>
-                document.write((new Date().getFullYear() % 100) - 2);
-              </script>
-            </p>
+            <p><span> Age: </span> <span id="author-age"></span></p>
             <p><span> Phone : </span> <a href="tel:+8801887853463"
                 style="color: inherit; text-decoration: none; cursor: pointer;">+8801887853463</a></p>
           </div>
@@ -405,10 +408,6 @@
 
 
   <!-- ==== ALL MAJOR JAVASCRIPT CDNS STARTS ==== -->
-  <!-- jquery cdn -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <!-- typed.js cdn -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.5/typed.min.js"

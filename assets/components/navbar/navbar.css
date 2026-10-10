@@ -154,6 +154,10 @@ header .navbar ul li a:hover {
   cursor: pointer;
   color: var(--page-accent);
   display: none;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 0;
 }
 @media (max-width: 992px) {
   header {
