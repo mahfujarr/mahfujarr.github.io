@@ -1205,8 +1205,17 @@ html[data-theme="dark"] .about .row .content h3 {
   color: var(--dark-accent);
 }
 
+html[data-theme="dark"] .home {
+  background: radial-gradient(
+    circle at 50% 30%,
+    rgba(37, 6, 173, 0.3) 0%,
+    rgba(1, 26, 255, 0.08) 50%,
+    #070b16 100%
+  );
+}
+
 html[data-theme="dark"] .about {
-  background: var(--dark-bg-secondary);
+  background: linear-gradient(180deg, #070b16 0%, #0b1122 50%, #080d1a 100%);
 }
 
 html[data-theme="dark"] .about .row .image img,
@@ -1220,10 +1229,11 @@ html[data-theme="dark"] .about .row .content .tag {
 }
 
 html[data-theme="dark"] .skills {
-  background: linear-gradient(
-    to bottom,
-    var(--dark-bg-card),
-    var(--dark-bg-primary)
+  background: radial-gradient(
+    ellipse at 50% 0%,
+    rgba(87, 5, 158, 0.35) 0%,
+    rgba(15, 6, 38, 0.95) 70%,
+    #080318 100%
   );
 }
 
@@ -1241,7 +1251,7 @@ html[data-theme="dark"] .skills .container .bar:hover {
 }
 
 html[data-theme="dark"] .education {
-  background: var(--dark-bg-tertiary);
+  background: linear-gradient(180deg, #080318 0%, #091629 50%, #08111e 100%);
 }
 
 html[data-theme="dark"] .education .box-container .box {
@@ -1261,10 +1271,10 @@ html[data-theme="dark"] .work .box-container .box .content .tag h3 {
 }
 
 html[data-theme="dark"] .work {
-  background: linear-gradient(
-    to bottom,
-    var(--dark-bg-card),
-    var(--dark-bg-primary)
+  background: radial-gradient(
+    circle at 50% 20%,
+    rgba(43, 61, 218, 0.22) 0%,
+    #060317 75%
   );
 }
 
@@ -1272,9 +1282,13 @@ html[data-theme="dark"] .work .box-container .box .content {
   background: rgba(13, 21, 38, 0.9);
 }
 
+html[data-theme="dark"] .experience {
+  background: linear-gradient(180deg, #060317 0%, #0a0e1c 50%, #070a14 100%);
+}
+
 html[data-theme="dark"] .experience .content .tag h2,
-h3,
-p {
+html[data-theme="dark"] .experience .content .desc h3,
+html[data-theme="dark"] .experience .content .desc p {
   color: #08111f;
 }
 
@@ -1284,7 +1298,18 @@ html[data-theme="dark"] .experience .timeline::after {
 
 /* Dark theme - contact section */
 html[data-theme="dark"] .contact {
-  background: var(--dark-bg-secondary);
+  background: radial-gradient(
+    ellipse at 50% 100%,
+    rgba(122, 162, 255, 0.15) 0%,
+    #080e1c 70%,
+    #050811 100%
+  );
+}
+
+/* Dark theme - footer */
+html[data-theme="dark"] .footer {
+  background: #030408;
+  border-top: 1px solid rgba(122, 162, 255, 0.1);
 }
 
 html[data-theme="dark"] .contact .container {
