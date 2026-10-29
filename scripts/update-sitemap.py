@@ -10,7 +10,7 @@ from xml.etree import ElementTree as ET
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 SITEMAP_PATH = REPO_ROOT / "sitemap.xml"
-SITE_URL = "https://mahfujarr.me"
+SITE_URL = "https://mahfujarr.xyz"
 
 
 PAGES = [
