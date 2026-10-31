@@ -29,10 +29,6 @@ fetch("../assets/components/footer/footer.html")
   });
 
 $(document).ready(function () {
-  $(document).on("click", "#menu", function () {
-    $(this).toggleClass("fa-times");
-    $("header .navbar").toggleClass("nav-toggle");
-  });
   // Scroll-top click handler
   $(document).on("click", "#scroll-top", function () {
     $("html, body").animate(
@@ -44,8 +40,12 @@ $(document).ready(function () {
     return false;
   });
   $(window).on("scroll load", function () {
-    $("#menu").removeClass("fa-times");
-    $(".navbar").removeClass("nav-toggle");
+    if (typeof closeMobileNav === "function") {
+      closeMobileNav();
+    } else {
+      $("#menu").removeClass("fa-times");
+      $("header .navbar").removeClass("nav-toggle");
+    }
 
     if (window.scrollY > 60) {
       document.querySelector("#scroll-top").classList.add("active");

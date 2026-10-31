@@ -63,15 +63,7 @@ function showToast(message, type) {
     toast.className = toast.className.replace("show", "");
   }, 3000);
 }
-// Toggle mobile navigation
-document.addEventListener("click", function (e) {
-  const menuBtn = e.target.closest("#menu");
-  if (menuBtn) {
-    menuBtn.classList.toggle("fa-times");
-    const nav = document.querySelector("header .navbar");
-    if (nav) nav.classList.toggle("nav-toggle");
-  }
-});
+// Mobile navigation drawer is managed globally in theme.js
 
 // Profile image cycling on click
 document.addEventListener("click", function (e) {
@@ -86,10 +78,14 @@ document.addEventListener("click", function (e) {
 
 // Scroll listener: scroll-to-top button visibility & scroll spy
 function handleScroll() {
-  const menuBtn = document.getElementById("menu");
-  const nav = document.querySelector("header .navbar");
-  if (menuBtn) menuBtn.classList.remove("fa-times");
-  if (nav) nav.classList.remove("nav-toggle");
+  if (typeof closeMobileNav === "function") {
+    closeMobileNav();
+  } else {
+    const menuBtn = document.getElementById("menu");
+    const nav = document.querySelector("header .navbar");
+    if (menuBtn) menuBtn.classList.remove("fa-times");
+    if (nav) nav.classList.remove("nav-toggle");
+  }
 
   const scrollTopBtn = document.getElementById("scroll-top");
   if (scrollTopBtn) {
